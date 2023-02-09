@@ -1,7 +1,7 @@
-import logo from "assets/logo.svg";
+import logo from 'assets/logo.svg'
 
-type Props = {};
+type Props = {}
 const Logo = (props: Props) => {
-  return <>Logo</>;
-};
-export default Logo;
+    return <>Logo</>
+}
+export default Logo
