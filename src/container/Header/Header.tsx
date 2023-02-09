@@ -5,12 +5,13 @@ import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Container } from '@mui/material'
+import './Header.scss'
 
 type Props = {}
 const Header = (props: Props) => {
     return (
         <AppBar position="static">
-            <Container>
+            <Container className="app-bar">
                 <Toolbar>
                     <IconButton
                         size="large"
