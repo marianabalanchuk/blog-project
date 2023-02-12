@@ -20,7 +20,7 @@ const Menu = (props: Props) => {
                 Health
                 <ExpandMoreIcon />
             </Button>
-            <IconButton aria-label="favorite" size="medium" color="error">
+            <IconButton aria-label="favorite" size="medium">
                 <FavoriteBorderIcon fontSize="inherit" />
             </IconButton>
         </div>

@@ -1,6 +1,8 @@
 .article {
     overflow: hidden;
     margin: 25px auto;
+    text-align: left;
+    position: relative;
     img {
         object-fit: cover;
         max-height: 350px;
@@ -17,4 +19,42 @@
 }
 .article-title:hover {
     color: #ff3152;
+}
+
+.article-info {
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: #444444;
+}
+
+.article-date::before,
+.article-date::after {
+    content: '\00b7';
+    padding: 15px;
+}
+
+.article-category {
+    color: white;
+    background-color: #0061e0;
+    border-radius: 20px;
+    font-weight: 600;
+    padding: 5px;
+    text-align: center;
+    width: 100px;
+    position: absolute;
+    top: 300px;
+    left: 5%;
+}
+
+.article-author {
+    a {
+        font-size: 14px;
+        font-weight: 500;
+        color: #444444;
+        text-decoration: none;
+    }
 }

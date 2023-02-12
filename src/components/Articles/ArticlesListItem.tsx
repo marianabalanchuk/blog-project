@@ -1,4 +1,5 @@
-import { Button } from '@mui/material'
+import { IconButton } from '@mui/material'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { Component } from 'react'
 import './ArticleListItem.scss'
 const moment = require('moment')
@@ -19,11 +20,17 @@ class ArticlesListItem extends Component<Props> {
                 <img src={image} alt="article image" />
                 <div className="article-title">{title}</div>
                 <div className="article-category">{category}</div>
-                <div className="article-author">{author}</div>
-                <div className="article-date">
-                    {moment(date).format('MMM DD, YYYY')}
+                <div className="article-info">
+                    <div className="article-author">
+                        <a href="#">{author}</a>
+                    </div>
+                    <div className="article-date">
+                        {moment(date).format('MMM DD, YYYY')}
+                    </div>
+                    <IconButton aria-label="favorite" size="small">
+                        <FavoriteBorderIcon fontSize="inherit" />
+                    </IconButton>
                 </div>
-                <Button variant="outlined">Like</Button>
             </div>
         )
     }
