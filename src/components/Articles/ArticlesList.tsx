@@ -9,7 +9,7 @@ const ArticlesList = (props: Props) => {
         <div>
             <Grid container spacing={4}>
                 {ArticlesArray.map(
-                    ({ id, title, category, author, date, image }) => {
+                    ({ id, title, category, author, date, image, summary }) => {
                         return (
                             <Grid item xs={12} sm={6} key={id}>
                                 <ArticlesListItem
@@ -18,6 +18,7 @@ const ArticlesList = (props: Props) => {
                                     author={author}
                                     date={date}
                                     image={image}
+                                    summary={summary}
                                 />
                             </Grid>
                         )

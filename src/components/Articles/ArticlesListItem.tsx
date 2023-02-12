@@ -10,11 +10,12 @@ type Props = {
     author: string
     date: Date
     image: string
+    summary: string
 }
 
 class ArticlesListItem extends Component<Props> {
     render() {
-        const { title, category, author, date, image } = this.props
+        const { title, category, author, date, image, summary } = this.props
         return (
             <div className="article">
                 <img src={image} alt="article image" />
@@ -31,6 +32,7 @@ class ArticlesListItem extends Component<Props> {
                         <FavoriteBorderIcon fontSize="inherit" />
                     </IconButton>
                 </div>
+                <p className="article-summary">{summary}</p>
             </div>
         )
     }
