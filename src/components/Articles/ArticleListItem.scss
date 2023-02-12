@@ -1,7 +1,20 @@
 .article {
+    overflow: hidden;
+    margin: 25px auto;
     img {
         object-fit: cover;
-        max-height: 250px;
+        max-height: 350px;
+        width: 100%;
+        object-position: center;
+        aspect-ratio: 1;
         border-radius: 20px;
     }
+}
+.article-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+.article-title:hover {
+    color: #ff3152;
 }
