@@ -7,6 +7,8 @@ import { Container } from '@mui/material'
 import './Header.scss'
 import Logo from 'components/Logo/Logo'
 import Menu from 'components/Menu/Menu'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {}
 const Header = (props: Props) => {
@@ -16,6 +18,7 @@ const Header = (props: Props) => {
                 <Toolbar>
                     <Logo image="images/logo_black.png" />
                     <Menu />
+                    <FontAwesomeIcon icon={faCoffee} />
 
                     <IconButton
                         size="large"
