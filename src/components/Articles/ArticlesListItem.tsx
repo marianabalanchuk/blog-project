@@ -29,7 +29,10 @@ class ArticlesListItem extends Component<Props> {
                         {moment(date).format('MMM DD, YYYY')}
                     </div>
                     <IconButton aria-label="favorite" size="small">
-                        <FavoriteBorderIcon fontSize="inherit" />
+                        <FavoriteBorderIcon
+                            fontSize="inherit"
+                            className="like-btn"
+                        />
                     </IconButton>
                 </div>
                 <p className="article-summary">{summary}</p>
