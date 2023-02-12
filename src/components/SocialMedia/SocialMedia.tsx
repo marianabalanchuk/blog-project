@@ -13,19 +13,33 @@ const SocialMedia = (props: Props) => {
     return (
         <div className="social-media-icons">
             <IconButton>
-                <FontAwesomeIcon icon={faFacebook} className="fb-icon" />
+                <a href="https://www.facebook.com/" target={'_blank'}>
+                    <FontAwesomeIcon icon={faFacebook} className="fb-icon" />
+                </a>
             </IconButton>
             <IconButton>
-                <FontAwesomeIcon
-                    icon={faPinterest}
-                    className="pinterest-icon"
-                />
+                <a href="https://www.pinterest.com/" target={'_blank'}>
+                    <FontAwesomeIcon
+                        icon={faPinterest}
+                        className="pinterest-icon"
+                    />
+                </a>
             </IconButton>
             <IconButton>
-                <FontAwesomeIcon icon={faTwitter} className="twitter-icon" />
+                <a href="https://twitter.com/" target={'_blank'}>
+                    <FontAwesomeIcon
+                        icon={faTwitter}
+                        className="twitter-icon"
+                    />
+                </a>
             </IconButton>
             <IconButton>
-                <FontAwesomeIcon icon={faSpotify} className="spotify-icon" />
+                <a href="https://spotify.com/" target={'_blank'}>
+                    <FontAwesomeIcon
+                        icon={faSpotify}
+                        className="spotify-icon"
+                    />
+                </a>
             </IconButton>
         </div>
     )

@@ -6,15 +6,15 @@ type Props = {}
 const Footer = (props: Props) => {
     return (
         <div className="footer">
-            <Logo image="images/logo_white.png" />
+            <Logo image="images/logo_white.png" width={200} />
             <div>
-                <a href="/" className="doc-link">
+                <a href="#" className="doc-link">
                     About Us
                 </a>
-                <a href="/" className="doc-link">
+                <a href="#" className="doc-link">
                     Privacy Policy
                 </a>
-                <a href="/" className="doc-link">
+                <a href="#" className="doc-link">
                     Forums
                 </a>
             </div>
