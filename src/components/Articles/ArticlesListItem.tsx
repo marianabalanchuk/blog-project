@@ -1,0 +1,32 @@
+import { Button } from '@mui/material'
+import { Component } from 'react'
+import './ArticleListItem.scss'
+const moment = require('moment')
+
+type Props = {
+    title: string
+    category: string
+    author: string
+    date: Date
+    image: string
+}
+
+class ArticlesListItem extends Component<Props> {
+    render() {
+        const { title, category, author, date, image } = this.props
+        return (
+            <div className="article">
+                <img src={image} alt="article image" />
+                <div className="article-title">{title}</div>
+                <div className="article-category">{category}</div>
+                <div className="article-author">{author}</div>
+                <div className="article-date">
+                    {moment(date).format('MMM DD, YYYY')}
+                </div>
+                <Button variant="outlined">Like</Button>
+            </div>
+        )
+    }
+}
+
+export default ArticlesListItem
