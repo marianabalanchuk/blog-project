@@ -12,7 +12,7 @@ const Footer = (props: Props) => {
                 <a href="http://">Privacy Policy</a>
                 <a href="http://">Forums</a>
             </div>
-            <div>
+            <div className="googletext">
                 © Copyright 2021 Jellywp. All rights reserved powered by Jellywp
             </div>
             <SocialMedia />
