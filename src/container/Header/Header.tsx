@@ -11,7 +11,7 @@ import Menu from 'components/Menu/Menu'
 type Props = {}
 const Header = (props: Props) => {
     return (
-        <AppBar position="static" className="app-bar">
+        <AppBar position="fixed" className="app-bar">
             <Container>
                 <Toolbar>
                     <Logo image="images/logo_black.png" width={140} />
