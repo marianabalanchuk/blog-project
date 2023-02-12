@@ -1,13 +1,31 @@
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded'
+import {
+    faFacebook,
+    faPinterest,
+    faSpotify,
+    faTwitter,
+} from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import IconButton from '@mui/material/IconButton'
 
 type Props = {}
 
 const SocialMedia = (props: Props) => {
     return (
-        <div>
-            <IconButton aria-label="facebook" size="medium" color="error">
-                <FacebookRoundedIcon fontSize="inherit" />
+        <div className="social-media-icons">
+            <IconButton>
+                <FontAwesomeIcon icon={faFacebook} className="fb-icon" />
+            </IconButton>
+            <IconButton>
+                <FontAwesomeIcon
+                    icon={faPinterest}
+                    className="pinterest-icon"
+                />
+            </IconButton>
+            <IconButton>
+                <FontAwesomeIcon icon={faTwitter} className="twitter-icon" />
+            </IconButton>
+            <IconButton>
+                <FontAwesomeIcon icon={faSpotify} className="spotify-icon" />
             </IconButton>
         </div>
     )

@@ -1,3 +1,55 @@
 .footer {
     background-color: black;
+    text-align: center;
+    color: white;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 14px;
+}
+.social-media-icons {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.fb-icon {
+    background-color: #45629f;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    color: white;
+}
+.pinterest-icon {
+    background-color: #e02321;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    color: white;
+}
+.twitter-icon {
+    background-color: #5eb2ef;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    color: white;
+}
+.spotify-icon {
+    background-color: #64e391;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    color: white;
+}
+.doc-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.doc-link:hover {
+    color: #ff3152;
 }
