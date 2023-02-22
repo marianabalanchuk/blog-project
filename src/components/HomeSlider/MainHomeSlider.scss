@@ -1,0 +1,47 @@
+.main-slider {
+    width: 60%;
+    --swiper-navigation-size: 40px;
+    --swiper-theme-color: white;
+    border-radius: 20px;
+}
+.main-swiper-slider {
+    img {
+        width: 100%;
+        object-fit: cover;
+        max-height: 500px;
+        object-position: center;
+        aspect-ratio: 1;
+        position: relative;
+    }
+    .article-text {
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        color: white;
+    }
+
+    .article-title {
+        font-size: 37px;
+        font-weight: 600;
+    }
+
+    .article-title:hover {
+        color: white;
+    }
+
+    .article-info {
+        font-size: 14px;
+        color: white;
+        a {
+            color: white;
+        }
+    }
+    .article-category {
+        position: static;
+        margin: 10px;
+    }
+
+    .article-date::after {
+        content: '';
+    }
+}

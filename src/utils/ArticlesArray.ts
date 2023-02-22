@@ -6,6 +6,8 @@ export type Article = {
     date: Date
     image: string
     summary: string
+    mainslider: boolean
+    sideslider: boolean
 }
 
 const ArticlesArray: Article[] = [
@@ -18,6 +20,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article1.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 2,
@@ -28,6 +32,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article2.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 3,
@@ -38,6 +44,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article3.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: true,
     },
     {
         id: 4,
@@ -48,6 +56,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article4.webp',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: true,
+        sideslider: false,
     },
     {
         id: 5,
@@ -58,6 +68,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article5.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 6,
@@ -68,6 +80,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article6.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 7,
@@ -78,6 +92,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article7.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: true,
+        sideslider: false,
     },
     {
         id: 8,
@@ -88,6 +104,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article8.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: true,
     },
     {
         id: 9,
@@ -98,6 +116,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article9.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 10,
@@ -108,6 +128,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article10.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 11,
@@ -118,6 +140,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article11.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 12,
@@ -128,6 +152,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article12.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: true,
     },
     {
         id: 13,
@@ -138,6 +164,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article13.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: true,
     },
     {
         id: 14,
@@ -148,6 +176,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article14.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: true,
+        sideslider: false,
     },
     {
         id: 15,
@@ -158,6 +188,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article15.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 16,
@@ -168,6 +200,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article16.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: true,
     },
     {
         id: 17,
@@ -178,6 +212,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article17.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 18,
@@ -188,6 +224,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article18.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 19,
@@ -198,6 +236,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article19.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: true,
+        sideslider: false,
     },
     {
         id: 20,
@@ -208,6 +248,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article20.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: true,
     },
     {
         id: 21,
@@ -218,6 +260,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article21.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 22,
@@ -228,6 +272,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article22.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 23,
@@ -238,6 +284,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article23.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 24,
@@ -248,6 +296,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article24.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 25,
@@ -258,6 +308,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article25.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: true,
     },
     {
         id: 26,
@@ -268,6 +320,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article26.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 27,
@@ -278,6 +332,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article27.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 28,
@@ -288,6 +344,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article28.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: true,
     },
     {
         id: 29,
@@ -298,6 +356,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article29.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 30,
@@ -308,6 +368,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article30.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: true,
+        sideslider: false,
     },
     {
         id: 31,
@@ -318,6 +380,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article31.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 32,
@@ -328,6 +392,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article32.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 33,
@@ -338,6 +404,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article33.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 34,
@@ -348,6 +416,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article34.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: true,
     },
     {
         id: 35,
@@ -358,6 +428,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article35.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
     {
         id: 36,
@@ -368,6 +440,8 @@ const ArticlesArray: Article[] = [
         image: 'images/article36.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
+        mainslider: false,
+        sideslider: false,
     },
 ]
 

@@ -2,7 +2,7 @@ import { IconButton } from '@mui/material'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { Component } from 'react'
 import './ArticleListItem.scss'
-const moment = require('moment')
+import moment from 'moment'
 
 type Props = {
     title: string
