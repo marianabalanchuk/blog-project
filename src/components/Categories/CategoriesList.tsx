@@ -2,7 +2,9 @@ import CategoriesArray from 'utils/CategoriesArray'
 import './Categories.scss'
 import CategoryListItem from './CategoryListItem'
 
-function CategoriesList() {
+type Props = {}
+
+const CategoriesList = (props: Props) => {
     return (
         <>
             {CategoriesArray.map(({ id, title, route, image, count }) => {
