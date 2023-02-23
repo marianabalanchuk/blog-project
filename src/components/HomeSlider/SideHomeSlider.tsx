@@ -7,6 +7,10 @@ import 'swiper/css/scrollbar'
 import moment from 'moment'
 import './SideHomeSlider.scss'
 import ArticlesArray from 'utils/ArticlesArray'
+import SwiperCore, { Mousewheel } from 'swiper'
+import { faL } from '@fortawesome/free-solid-svg-icons'
+
+SwiperCore.use([Mousewheel])
 
 type Props = {
     title: string
@@ -16,18 +20,18 @@ type Props = {
     image: string
     sideslider: boolean
 }
-function MainHomeSlider() {
+function SideHomeSlider() {
     return (
         <Swiper
             modules={[Scrollbar, A11y]}
-            spaceBetween={0}
+            spaceBetween={10}
             slidesPerView={4}
-            centeredSlides={true}
-            centeredSlidesBounds={true}
+            loop={true}
             scrollbar={{ draggable: true, hide: true }}
-            mousewheel={true}
             direction="vertical"
             className="side-slider"
+            mousewheel={{ sensitivity: 15 }}
+            speed={200}
         >
             {ArticlesArray.map(
                 ({ id, title, category, author, date, image, sideslider }) => {
@@ -70,4 +74,4 @@ function MainHomeSlider() {
     )
 }
 
-export default MainHomeSlider
+export default SideHomeSlider
