@@ -434,7 +434,7 @@ const ArticlesArray: Article[] = [
     {
         id: 36,
         title: 'Enjoy the best time with a special person',
-        category: 'Sport',
+        category: 'Business',
         author: 'John',
         date: new Date('01.21.2021'),
         image: 'images/article36.jpeg',

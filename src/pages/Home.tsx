@@ -1,4 +1,5 @@
 import ArticlesList from 'components/Articles/ArticlesList'
+import CategoriesList from 'components/Categories/CategoriesList'
 import MainHomeSlider from 'components/HomeSlider/MainHomeSlider'
 import SideHomeSlider from 'components/HomeSlider/SideHomeSlider'
 
@@ -10,6 +11,7 @@ const Home = (props: Props) => {
                 <MainHomeSlider />
                 <SideHomeSlider />
             </div>
+            <CategoriesList />
             <ArticlesList />
         </div>
     )
