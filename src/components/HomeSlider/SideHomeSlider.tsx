@@ -8,7 +8,6 @@ import moment from 'moment'
 import './SideHomeSlider.scss'
 import ArticlesArray from 'utils/ArticlesArray'
 import SwiperCore, { Mousewheel } from 'swiper'
-import { faL } from '@fortawesome/free-solid-svg-icons'
 
 SwiperCore.use([Mousewheel])
 
@@ -34,7 +33,14 @@ function SideHomeSlider() {
             speed={200}
         >
             {ArticlesArray.map(
-                ({ id, title, category, author, date, image, sideslider }) => {
+                ({
+                    title,
+                    category,
+                    author,
+                    date,
+                    image,
+                    sideslider,
+                }: Props) => {
                     return (
                         <>
                             {sideslider && (

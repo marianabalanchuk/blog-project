@@ -29,7 +29,14 @@ function MainHomeSlider() {
             className="main-slider"
         >
             {ArticlesArray.map(
-                ({ id, title, category, author, date, image, mainslider }) => {
+                ({
+                    title,
+                    category,
+                    author,
+                    date,
+                    image,
+                    mainslider,
+                }: Props) => {
                     return (
                         <>
                             {mainslider && (
