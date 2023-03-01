@@ -1,6 +1,6 @@
 import Header from 'container/Header/Header'
 import Footer from 'container/Footer/Footer'
-import { StyledEngineProvider } from '@mui/material'
+import { Container, StyledEngineProvider } from '@mui/material'
 import './App.scss'
 import Home from 'pages/Home'
 
@@ -10,7 +10,9 @@ const App = (props: Props) => {
         <>
             <StyledEngineProvider injectFirst>
                 <Header />
-                <Home />
+                <Container className="main-container">
+                    <Home />
+                </Container>
                 <Footer />
             </StyledEngineProvider>
         </>
