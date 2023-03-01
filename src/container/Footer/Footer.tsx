@@ -1,5 +1,6 @@
 import Logo from 'components/Logo/Logo'
 import SocialMedia from 'components/SocialMedia/SocialMedia'
+import { NavLink } from 'react-router-dom'
 import './Footer.scss'
 
 type Props = {}
@@ -8,15 +9,15 @@ const Footer = (props: Props) => {
         <div className="footer">
             <Logo image="images/logo_white.png" width={200} />
             <div>
-                <a href="/about" className="doc-link">
+                <NavLink to="/about" className="doc-link">
                     About Us
-                </a>
-                <a href="/privacypolicy" className="doc-link">
+                </NavLink>
+                <NavLink to="/privacypolicy" className="doc-link">
                     Privacy Policy
-                </a>
-                <a href="/subscribe" className="doc-link">
+                </NavLink>
+                <NavLink to="/subscribe" className="doc-link">
                     Subscribe
-                </a>
+                </NavLink>
             </div>
             <div>
                 © Copyright 2021 Jellywp. All rights reserved powered by Jellywp
