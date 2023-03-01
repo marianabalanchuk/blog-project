@@ -2,7 +2,12 @@ import Header from 'container/Header/Header'
 import Footer from 'container/Footer/Footer'
 import { Container, StyledEngineProvider } from '@mui/material'
 import './App.scss'
-import Home from 'pages/Home'
+import Home from 'pages/HomePage/Home'
+import { Route, Routes } from 'react-router-dom'
+import PrivacyPolicyPage from 'pages/PrivacyPolicyPage/PrivacyPolicyPage'
+import AboutPage from 'pages/AboutPage/AboutPage'
+import FavouritesPage from 'pages/FavouritesPage/FavouritesPage'
+import SubscribePage from 'pages/SubscribePage/SubscribePage'
 
 type Props = {}
 const App = (props: Props) => {
@@ -11,8 +16,21 @@ const App = (props: Props) => {
             <StyledEngineProvider injectFirst>
                 <Header />
                 <Container className="main-container">
-                    <Home />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route
+                            path="/privacypolicy"
+                            element={<PrivacyPolicyPage />}
+                        />
+                        <Route path="/about" element={<AboutPage />} />
+                        <Route path="/subscribe" element={<SubscribePage />} />
+                        <Route
+                            path="/favourites"
+                            element={<FavouritesPage />}
+                        />
+                    </Routes>
                 </Container>
+
                 <Footer />
             </StyledEngineProvider>
         </>

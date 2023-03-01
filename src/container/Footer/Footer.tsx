@@ -8,14 +8,14 @@ const Footer = (props: Props) => {
         <div className="footer">
             <Logo image="images/logo_white.png" width={200} />
             <div>
-                <a href="#" className="doc-link">
+                <a href="/about" className="doc-link">
                     About Us
                 </a>
-                <a href="#" className="doc-link">
+                <a href="/privacypolicy" className="doc-link">
                     Privacy Policy
                 </a>
-                <a href="#" className="doc-link">
-                    Forums
+                <a href="/subscribe" className="doc-link">
+                    Subscribe
                 </a>
             </div>
             <div>
