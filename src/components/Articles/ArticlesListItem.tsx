@@ -2,10 +2,11 @@ import { IconButton } from '@mui/material'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import './ArticleListItem.scss'
 import moment from 'moment'
+import { Category } from 'utils/CategoriesArray'
 
 type Props = {
     title: string
-    category: string
+    category: Category
     author: string
     date: Date
     image: string
@@ -24,7 +25,12 @@ const ArticlesListItem = ({
         <div className="article">
             <img src={image} alt="article image" />
             <div className="article-title">{title}</div>
-            <div className="article-category">{category}</div>
+            <div
+                className="article-category"
+                style={{ backgroundColor: category.color }}
+            >
+                {category.title}
+            </div>
             <div className="article-info">
                 <div className="article-author">
                     <a href="#">{author}</a>

@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material'
 import ArticlesArray from 'utils/ArticlesArray'
+import GetCategoryHelper from 'utils/GetCategoryHelper'
 import ArticlesListItem from './ArticlesListItem'
 
 type Props = {}
@@ -14,7 +15,7 @@ const ArticlesList = (props: Props) => {
                             <Grid item xs={12} sm={6} key={id}>
                                 <ArticlesListItem
                                     title={title}
-                                    category={category}
+                                    category={GetCategoryHelper(category)}
                                     author={author}
                                     date={date}
                                     image={image}

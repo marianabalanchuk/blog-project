@@ -8,10 +8,12 @@ import moment from 'moment'
 import './SideHomeSlider.scss'
 import ArticlesArray from 'utils/ArticlesArray'
 import SwiperCore, { Mousewheel } from 'swiper'
+import GetCategoryHelper from 'utils/GetCategoryHelper'
 
 SwiperCore.use([Mousewheel])
 
 type Props = {
+    id: number
     title: string
     category: string
     author: string
@@ -34,6 +36,7 @@ function SideHomeSlider() {
         >
             {ArticlesArray.map(
                 ({
+                    id,
                     title,
                     category,
                     author,
@@ -44,10 +47,20 @@ function SideHomeSlider() {
                     return (
                         <>
                             {sideslider && (
-                                <SwiperSlide className="side-swiper-slide">
+                                <SwiperSlide
+                                    className="side-swiper-slide"
+                                    key={id}
+                                >
                                     <div className="article-text">
-                                        <div className="article-category">
-                                            {category}
+                                        <div
+                                            className="article-category"
+                                            style={{
+                                                backgroundColor:
+                                                    GetCategoryHelper(category)
+                                                        .color,
+                                            }}
+                                        >
+                                            {GetCategoryHelper(category).title}
                                         </div>
                                         <div className="article-title">
                                             {title}

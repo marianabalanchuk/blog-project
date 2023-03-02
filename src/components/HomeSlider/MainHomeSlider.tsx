@@ -7,8 +7,10 @@ import 'swiper/css/scrollbar'
 import moment from 'moment'
 import ArticlesArray from 'utils/ArticlesArray'
 import './MainHomeSlider.scss'
+import GetCategoryHelper from 'utils/GetCategoryHelper'
 
 type Props = {
+    id: number
     title: string
     category: string
     author: string
@@ -30,6 +32,7 @@ function MainHomeSlider() {
         >
             {ArticlesArray.map(
                 ({
+                    id,
                     title,
                     category,
                     author,
@@ -38,13 +41,20 @@ function MainHomeSlider() {
                     mainslider,
                 }: Props) => {
                     return (
-                        <>
+                        <div key={id}>
                             {mainslider && (
                                 <SwiperSlide className="main-swiper-slider">
                                     <img src={image} alt="article image" />
                                     <div className="article-text">
-                                        <div className="article-category">
-                                            {category}
+                                        <div
+                                            className="article-category"
+                                            style={{
+                                                backgroundColor:
+                                                    GetCategoryHelper(category)
+                                                        .color,
+                                            }}
+                                        >
+                                            {GetCategoryHelper(category).title}
                                         </div>
                                         <div className="article-title">
                                             {title}
@@ -63,7 +73,7 @@ function MainHomeSlider() {
                                     </div>
                                 </SwiperSlide>
                             )}
-                        </>
+                        </div>
                     )
                 }
             )}

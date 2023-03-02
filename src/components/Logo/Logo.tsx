@@ -10,7 +10,7 @@ const Logo = (props: Props) => {
         <>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 <NavLink to="/">
-                    <img src={props.image} width={props.width} />
+                    <img src={props.image} width={props.width} alt="logo" />
                 </NavLink>
             </Typography>
         </>

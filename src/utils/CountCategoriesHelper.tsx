@@ -1,13 +1,10 @@
-import { Article } from './ArticlesArray'
+import ArticlesArray, { Article } from './ArticlesArray'
 
-function CountCategoryHelper(
-    articleArray: Article[],
-    category: string
-): number {
+function CountCategoryHelper(categoryTitle: string): number {
     let categoryCount: number = 0
 
-    articleArray.forEach((item) => {
-        if (item.category === category) categoryCount++
+    ArticlesArray.forEach((item) => {
+        if (item.category == categoryTitle) categoryCount++
     })
 
     return categoryCount
