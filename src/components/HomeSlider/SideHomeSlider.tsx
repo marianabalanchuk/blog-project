@@ -9,6 +9,7 @@ import './SideHomeSlider.scss'
 import ArticlesArray from 'utils/ArticlesArray'
 import SwiperCore, { Mousewheel } from 'swiper'
 import GetCategoryHelper from 'utils/GetCategoryHelper'
+import { NavLink } from 'react-router-dom'
 
 SwiperCore.use([Mousewheel])
 
@@ -52,16 +53,28 @@ function SideHomeSlider() {
                                     key={id}
                                 >
                                     <div className="article-text">
-                                        <div
-                                            className="article-category"
-                                            style={{
-                                                backgroundColor:
-                                                    GetCategoryHelper(category)
-                                                        .color,
-                                            }}
+                                        <NavLink
+                                            to={
+                                                GetCategoryHelper(category)
+                                                    .route
+                                            }
                                         >
-                                            {GetCategoryHelper(category).title}
-                                        </div>
+                                            <div
+                                                className="article-category"
+                                                style={{
+                                                    backgroundColor:
+                                                        GetCategoryHelper(
+                                                            category
+                                                        ).color,
+                                                }}
+                                            >
+                                                {
+                                                    GetCategoryHelper(category)
+                                                        .title
+                                                }
+                                            </div>
+                                        </NavLink>
+
                                         <div className="article-title">
                                             {title}
                                         </div>

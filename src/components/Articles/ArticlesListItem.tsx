@@ -3,6 +3,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import './ArticleListItem.scss'
 import moment from 'moment'
 import { Category } from 'utils/CategoriesArray'
+import { NavLink } from 'react-router-dom'
 
 type Props = {
     title: string
@@ -25,12 +26,14 @@ const ArticlesListItem = ({
         <div className="article">
             <img src={image} alt="article image" />
             <div className="article-title">{title}</div>
-            <div
-                className="article-category"
-                style={{ backgroundColor: category.color }}
-            >
-                {category.title}
-            </div>
+            <NavLink to={category.route}>
+                <div
+                    className="article-category"
+                    style={{ backgroundColor: category.color }}
+                >
+                    {category.title}
+                </div>
+            </NavLink>
             <div className="article-info">
                 <div className="article-author">
                     <a href="#">{author}</a>
