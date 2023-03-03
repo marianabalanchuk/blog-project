@@ -8,16 +8,28 @@ import PrivacyPolicyPage from 'pages/PrivacyPolicyPage/PrivacyPolicyPage'
 import AboutPage from 'pages/AboutPage/AboutPage'
 import FavouritesPage from 'pages/FavouritesPage/FavouritesPage'
 import SubscribePage from 'pages/SubscribePage/SubscribePage'
+import { useState } from 'react'
 
 type Props = {}
 const App = (props: Props) => {
+    const [likedArticles, setLikedArticles] = useState(0)
+
+    const addLikedArticles = () => {
+        setLikedArticles((prevState) => prevState + 1)
+    }
+
     return (
         <>
             <StyledEngineProvider injectFirst>
-                <Header />
+                <Header likedArticles={likedArticles} />
                 <Container className="main-container">
                     <Routes>
-                        <Route path="/" element={<Home />} />
+                        <Route
+                            path="/"
+                            element={
+                                <Home addLikedArticles={addLikedArticles} />
+                            }
+                        />
                         <Route
                             path="/privacypolicy"
                             element={<PrivacyPolicyPage />}

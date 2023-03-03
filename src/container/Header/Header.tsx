@@ -8,14 +8,16 @@ import './Header.scss'
 import Logo from 'components/Logo/Logo'
 import Menu from 'components/Menu/Menu'
 
-type Props = {}
+type Props = {
+    likedArticles: number
+}
 const Header = (props: Props) => {
     return (
         <AppBar position="fixed" className="app-bar">
             <Container>
                 <Toolbar>
                     <Logo image="images/logo_black.png" width={140} />
-                    <Menu />
+                    <Menu likedArticles={props.likedArticles} />
 
                     <IconButton
                         size="large"

@@ -12,6 +12,7 @@ type Props = {
     date: Date
     image: string
     summary: string
+    addLikedArticles: () => void
 }
 
 const ArticlesListItem = ({
@@ -21,6 +22,7 @@ const ArticlesListItem = ({
     date,
     image,
     summary,
+    addLikedArticles,
 }: Props) => {
     return (
         <div className="article">
@@ -41,7 +43,11 @@ const ArticlesListItem = ({
                 <div className="article-date">
                     {moment(date).format('MMM DD, YYYY')}
                 </div>
-                <IconButton aria-label="favorite" size="small">
+                <IconButton
+                    aria-label="favorite"
+                    size="small"
+                    onClick={addLikedArticles}
+                >
                     <FavoriteBorderIcon
                         fontSize="inherit"
                         className="like-btn"

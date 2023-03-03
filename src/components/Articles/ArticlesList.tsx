@@ -3,7 +3,9 @@ import ArticlesArray from 'utils/ArticlesArray'
 import GetCategoryHelper from 'utils/GetCategoryHelper'
 import ArticlesListItem from './ArticlesListItem'
 
-type Props = {}
+type Props = {
+    addLikedArticles: () => void
+}
 
 const ArticlesList = (props: Props) => {
     return (
@@ -20,6 +22,7 @@ const ArticlesList = (props: Props) => {
                                     date={date}
                                     image={image}
                                     summary={summary}
+                                    addLikedArticles={props.addLikedArticles}
                                 />
                             </Grid>
                         )

@@ -5,7 +5,9 @@ import './Menu.scss'
 import { NavLink } from 'react-router-dom'
 import CategoryConstants from 'utils/CategoryConstants'
 
-type Props = {}
+type Props = {
+    likedArticles: number
+}
 
 const Menu = (props: Props) => {
     return (
@@ -30,6 +32,7 @@ const Menu = (props: Props) => {
                     }
                 >
                     <FavoriteBorderIcon fontSize={'medium'} />
+                    <div className="like-counter">{props.likedArticles}</div>
                 </NavLink>
             </IconButton>
         </div>

@@ -1,4 +1,3 @@
-import { color } from '@mui/system'
 import CategoriesArray from 'utils/CategoriesArray'
 import './Categories.scss'
 import CategoryListItem from './CategoryListItem'

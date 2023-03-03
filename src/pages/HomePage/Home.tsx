@@ -3,7 +3,9 @@ import CategoriesList from 'components/Categories/CategoriesList'
 import MainHomeSlider from 'components/HomeSlider/MainHomeSlider'
 import SideHomeSlider from 'components/HomeSlider/SideHomeSlider'
 
-type Props = {}
+type Props = {
+    addLikedArticles: () => void
+}
 const Home = (props: Props) => {
     return (
         <div>
@@ -14,7 +16,7 @@ const Home = (props: Props) => {
             <div className="categories">
                 <CategoriesList />
             </div>
-            <ArticlesList />
+            <ArticlesList addLikedArticles={props.addLikedArticles} />
         </div>
     )
 }
