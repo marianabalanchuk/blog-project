@@ -9,8 +9,8 @@ import AboutPage from 'pages/AboutPage/AboutPage'
 import FavouritesPage from 'pages/FavouritesPage/FavouritesPage'
 import SubscribePage from 'pages/SubscribePage/SubscribePage'
 import { useState } from 'react'
-import HealthPage from 'pages/CategoryPage/HealthPage'
 import CategoryConstants from 'utils/CategoryConstants'
+import CategoryPage from 'pages/CategoryPage/CategoryPage'
 
 type Props = {}
 const App = (props: Props) => {
@@ -45,8 +45,39 @@ const App = (props: Props) => {
                         <Route
                             path={CategoryConstants.HEALTH.toLowerCase()}
                             element={
-                                <HealthPage
+                                <CategoryPage
                                     addLikedArticles={addLikedArticles}
+                                    categoryTitle={CategoryConstants.HEALTH}
+                                />
+                            }
+                        />
+
+                        <Route
+                            path={CategoryConstants.BUSINESS.toLowerCase()}
+                            element={
+                                <CategoryPage
+                                    addLikedArticles={addLikedArticles}
+                                    categoryTitle={CategoryConstants.BUSINESS}
+                                />
+                            }
+                        />
+                        <Route
+                            path={CategoryConstants.INSPIRATION.toLowerCase()}
+                            element={
+                                <CategoryPage
+                                    addLikedArticles={addLikedArticles}
+                                    categoryTitle={
+                                        CategoryConstants.INSPIRATION
+                                    }
+                                />
+                            }
+                        />
+                        <Route
+                            path={CategoryConstants.SPORT.toLowerCase()}
+                            element={
+                                <CategoryPage
+                                    addLikedArticles={addLikedArticles}
+                                    categoryTitle={CategoryConstants.SPORT}
                                 />
                             }
                         />

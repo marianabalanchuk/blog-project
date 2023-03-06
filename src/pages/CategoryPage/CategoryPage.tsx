@@ -2,23 +2,23 @@ import { IconButton } from '@mui/material'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import ArticlesArray from 'utils/ArticlesArray'
-import CategoryConstants from 'utils/CategoryConstants'
 import './CategoryPage.scss'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import GetCategoryHelper from 'utils/GetCategoryHelper'
 
 type Props = {
     addLikedArticles: () => void
+    categoryTitle: string
 }
 
-const HealthPage = (props: Props) => {
-    const healthArticles = ArticlesArray.filter((article) => {
-        return article.category === CategoryConstants.HEALTH
+const CategoryPage = (props: Props) => {
+    const categoryArticles = ArticlesArray.filter((article) => {
+        return article.category === props.categoryTitle
     })
 
     return (
         <div>
-            {healthArticles.map(
+            {categoryArticles.map(
                 ({ id, image, title, author, date, summary, category }) => {
                     return (
                         <div className="article" key={id}>
@@ -62,4 +62,4 @@ const HealthPage = (props: Props) => {
     )
 }
 
-export default HealthPage
+export default CategoryPage
