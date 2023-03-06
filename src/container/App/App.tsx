@@ -9,6 +9,8 @@ import AboutPage from 'pages/AboutPage/AboutPage'
 import FavouritesPage from 'pages/FavouritesPage/FavouritesPage'
 import SubscribePage from 'pages/SubscribePage/SubscribePage'
 import { useState } from 'react'
+import HealthPage from 'pages/CategoryPage/HealthPage'
+import CategoryConstants from 'utils/CategoryConstants'
 
 type Props = {}
 const App = (props: Props) => {
@@ -39,6 +41,14 @@ const App = (props: Props) => {
                         <Route
                             path="/favourites"
                             element={<FavouritesPage />}
+                        />
+                        <Route
+                            path={CategoryConstants.HEALTH.toLowerCase()}
+                            element={
+                                <HealthPage
+                                    addLikedArticles={addLikedArticles}
+                                />
+                            }
                         />
                     </Routes>
                 </Container>

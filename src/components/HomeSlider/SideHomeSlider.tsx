@@ -9,7 +9,7 @@ import './SideHomeSlider.scss'
 import ArticlesArray from 'utils/ArticlesArray'
 import SwiperCore, { Mousewheel } from 'swiper'
 import GetCategoryHelper from 'utils/GetCategoryHelper'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 SwiperCore.use([Mousewheel])
 
@@ -53,7 +53,7 @@ function SideHomeSlider() {
                                     key={id}
                                 >
                                     <div className="article-text">
-                                        <NavLink
+                                        <Link
                                             to={
                                                 GetCategoryHelper(category)
                                                     .route
@@ -73,7 +73,7 @@ function SideHomeSlider() {
                                                         .title
                                                 }
                                             </div>
-                                        </NavLink>
+                                        </Link>
 
                                         <div className="article-title">
                                             {title}

@@ -3,7 +3,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import './ArticleListItem.scss'
 import moment from 'moment'
 import { Category } from 'utils/CategoriesArray'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 type Props = {
     title: string
@@ -27,18 +27,20 @@ const ArticlesListItem = ({
     return (
         <div className="article">
             <img src={image} alt="article image" />
-            <div className="article-title">{title}</div>
-            <NavLink to={category.route}>
+
+            <Link to={category.route}>
                 <div
                     className="article-category"
                     style={{ backgroundColor: category.color }}
                 >
                     {category.title}
                 </div>
-            </NavLink>
+            </Link>
+
+            <div className="article-title">{title}</div>
             <div className="article-info">
                 <div className="article-author">
-                    <a href="#">{author}</a>
+                    <Link to={'/'}>{author}</Link>
                 </div>
                 <div className="article-date">
                     {moment(date).format('MMM DD, YYYY')}

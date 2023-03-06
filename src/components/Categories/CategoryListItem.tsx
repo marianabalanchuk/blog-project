@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 type Props = {
     title: string
@@ -11,7 +11,7 @@ type Props = {
 const CategoryListItem = ({ title, count, route, image, color }: Props) => {
     return (
         <div className="category-item">
-            <NavLink to={route}>
+            <Link to={route}>
                 <img src={image} alt="category image" />
                 <div className="category-text">
                     <p className="category-title">{title}</p>
@@ -24,7 +24,7 @@ const CategoryListItem = ({ title, count, route, image, color }: Props) => {
                         {count}
                     </p>
                 </div>
-            </NavLink>
+            </Link>
         </div>
     )
 }
