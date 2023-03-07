@@ -17,43 +17,46 @@ const CategoryPage = (props: Props) => {
     })
 
     return (
-        <div>
+        <div className="category-pg-container">
             {categoryArticles.map(
                 ({ id, image, title, author, date, summary, category }) => {
                     return (
                         <div className="article" key={id}>
-                            <img src={image} alt="article image" />
-
-                            <div
-                                className="article-category"
-                                style={{
-                                    backgroundColor:
-                                        GetCategoryHelper(category).color,
-                                }}
-                            >
-                                {category}
+                            <div>
+                                <img src={image} alt="article image" />
                             </div>
-
-                            <div className="article-title">{title}</div>
-                            <div className="article-info">
-                                <div className="article-author">
-                                    <Link to={'/'}>{author}</Link>
-                                </div>
-                                <div className="article-date">
-                                    {moment(date).format('MMM DD, YYYY')}
-                                </div>
-                                <IconButton
-                                    aria-label="favorite"
-                                    size="small"
-                                    onClick={props.addLikedArticles}
+                            <div className="article-data">
+                                <div
+                                    className="article-category"
+                                    style={{
+                                        backgroundColor:
+                                            GetCategoryHelper(category).color,
+                                    }}
                                 >
-                                    <FavoriteBorderIcon
-                                        fontSize="inherit"
-                                        className="like-btn"
-                                    />
-                                </IconButton>
+                                    {category}
+                                </div>
+
+                                <div className="article-title">{title}</div>
+                                <div className="article-info">
+                                    <div className="article-author">
+                                        <Link to={'/'}>{author}</Link>
+                                    </div>
+                                    <div className="article-date">
+                                        {moment(date).format('MMM DD, YYYY')}
+                                    </div>
+                                    <IconButton
+                                        aria-label="favorite"
+                                        size="small"
+                                        onClick={props.addLikedArticles}
+                                    >
+                                        <FavoriteBorderIcon
+                                            fontSize="inherit"
+                                            className="like-btn"
+                                        />
+                                    </IconButton>
+                                </div>
+                                <p className="article-summary">{summary}</p>
                             </div>
-                            <p className="article-summary">{summary}</p>
                         </div>
                     )
                 }

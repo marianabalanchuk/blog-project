@@ -1,1 +1,23 @@
+.category-pg-container {
+    .article {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        max-width: 850px;
+        position: static;
+    }
 
+    img {
+        width: 320px;
+        height: 250px;
+    }
+
+    .article-category {
+        position: static;
+        margin: 15px;
+    }
+
+    .article-summary {
+        overflow: visible;
+    }
+}
