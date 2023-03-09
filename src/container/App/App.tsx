@@ -26,7 +26,7 @@ const App = (props: Props) => {
     const addFavoriteArticle = (id: number) => {
         setFavoriteArticles((prevState) => ({
             ...prevState,
-            [id]: prevState[id],
+            [id]: id,
         }))
     }
 

@@ -32,6 +32,14 @@ const ArticlesListItem = ({
     removeFavoriteArticle,
     favoriteArticles,
 }: Props) => {
+    const onLikeClick = (id: number) => {
+        console.log(favoriteArticles)
+        console.log(favoriteArticles[id])
+        favoriteArticles[id]
+            ? removeFavoriteArticle(id)
+            : addFavoriteArticle(id)
+    }
+
     return (
         <div className="article">
             <img src={image} alt="article image" />
@@ -57,11 +65,7 @@ const ArticlesListItem = ({
                 <IconButton
                     aria-label="favorite"
                     size="small"
-                    onClick={() =>
-                        favoriteArticles[id]
-                            ? removeFavoriteArticle(id)
-                            : addFavoriteArticle(id)
-                    }
+                    onClick={() => onLikeClick(id)}
                 >
                     <FavoriteBorderIcon
                         fontSize="inherit"
