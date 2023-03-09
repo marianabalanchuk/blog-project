@@ -1,6 +1,7 @@
 import ArticlesListItem from 'components/Articles/ArticlesListItem'
 import ArticlesArray, { Article, getArticlesObject } from 'utils/ArticlesArray'
 import GetCategoryHelper from 'utils/GetCategoryHelper'
+import './FavoritesPage.scss'
 
 type Props = {
     favoriteArticles: {
@@ -19,7 +20,7 @@ const FavouritesPage = ({
     removeFavoriteArticle,
 }: Props) => {
     return (
-        <>
+        <div className="favorites-pg-container">
             {Object.keys(favoriteArticles).map((id) => (
                 <div key={id}>
                     <ArticlesListItem
@@ -38,7 +39,7 @@ const FavouritesPage = ({
                     />
                 </div>
             ))}
-        </>
+        </div>
     )
 }
 export default FavouritesPage
