@@ -37,7 +37,7 @@ const App = (props: Props) => {
     return (
         <>
             <StyledEngineProvider injectFirst>
-                <Header />
+                <Header favoriteArticles={favoriteArticles} />
                 <Container className="main-container">
                     <Routes>
                         <Route
