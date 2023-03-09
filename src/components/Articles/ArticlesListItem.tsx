@@ -6,23 +6,31 @@ import { Category } from 'utils/CategoriesArray'
 import { Link } from 'react-router-dom'
 
 type Props = {
+    id: number
     title: string
     category: Category
     author: string
     date: Date
     image: string
     summary: string
-    addLikedArticles: () => void
+    addFavoriteArticle: (id: number) => void
+    removeFavoriteArticle: (id: number) => void
+    favoriteArticles: {
+        [id: number]: number
+    }
 }
 
 const ArticlesListItem = ({
+    id,
     title,
     category,
     author,
     date,
     image,
     summary,
-    addLikedArticles,
+    addFavoriteArticle,
+    removeFavoriteArticle,
+    favoriteArticles,
 }: Props) => {
     return (
         <div className="article">
@@ -45,10 +53,15 @@ const ArticlesListItem = ({
                 <div className="article-date">
                     {moment(date).format('MMM DD, YYYY')}
                 </div>
+
                 <IconButton
                     aria-label="favorite"
                     size="small"
-                    onClick={addLikedArticles}
+                    onClick={() =>
+                        favoriteArticles[id]
+                            ? removeFavoriteArticle(id)
+                            : addFavoriteArticle(id)
+                    }
                 >
                     <FavoriteBorderIcon
                         fontSize="inherit"

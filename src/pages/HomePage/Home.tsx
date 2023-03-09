@@ -4,7 +4,11 @@ import MainHomeSlider from 'components/HomeSlider/MainHomeSlider'
 import SideHomeSlider from 'components/HomeSlider/SideHomeSlider'
 
 type Props = {
-    addLikedArticles: () => void
+    addFavoriteArticle: (id: number) => void
+    removeFavoriteArticle: (id: number) => void
+    favoriteArticles: {
+        [id: number]: number
+    }
 }
 const Home = (props: Props) => {
     return (
@@ -16,7 +20,11 @@ const Home = (props: Props) => {
             <div className="categories">
                 <CategoriesList />
             </div>
-            <ArticlesList addLikedArticles={props.addLikedArticles} />
+            <ArticlesList
+                addFavoriteArticle={props.addFavoriteArticle}
+                removeFavoriteArticle={props.removeFavoriteArticle}
+                favoriteArticles={props.favoriteArticles}
+            />
         </div>
     )
 }

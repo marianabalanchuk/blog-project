@@ -11,6 +11,7 @@ import SubscribePage from 'pages/SubscribePage/SubscribePage'
 import { useState } from 'react'
 import CategoryConstants from 'utils/CategoryConstants'
 import CategoryPage from 'pages/CategoryPage/CategoryPage'
+import { omit } from 'lodash'
 
 type Props = {}
 
@@ -29,24 +30,25 @@ const App = (props: Props) => {
         }))
     }
 
-    const [likedArticles, setLikedArticles] = useState(0)
-
-    const addLikedArticles = () => {
-        setLikedArticles((prevState) => prevState + 1)
+    const removeFavoriteArticle = (id: number) => {
+        setFavoriteArticles((prevState) => omit(prevState, id))
     }
 
     return (
         <>
             <StyledEngineProvider injectFirst>
-                <Header likedArticles={likedArticles} />
+                <Header />
                 <Container className="main-container">
                     <Routes>
                         <Route
                             path="/"
                             element={
                                 <Home
-                                    addLikedArticles={addLikedArticles}
+                                    removeFavoriteArticle={
+                                        removeFavoriteArticle
+                                    }
                                     addFavoriteArticle={addFavoriteArticle}
+                                    favoriteArticles={favoriteArticles}
                                 />
                             }
                         />
@@ -61,8 +63,10 @@ const App = (props: Props) => {
                             element={
                                 <FavouritesPage
                                     favoriteArticles={favoriteArticles}
-                                    addLikedArticles={addLikedArticles}
                                     addFavoriteArticle={addFavoriteArticle}
+                                    removeFavoriteArticle={
+                                        removeFavoriteArticle
+                                    }
                                 />
                             }
                         />
@@ -70,7 +74,7 @@ const App = (props: Props) => {
                             path={CategoryConstants.HEALTH.toLowerCase()}
                             element={
                                 <CategoryPage
-                                    addLikedArticles={addLikedArticles}
+                                    addFavoriteArticle={addFavoriteArticle}
                                     categoryTitle={CategoryConstants.HEALTH}
                                 />
                             }
@@ -80,7 +84,7 @@ const App = (props: Props) => {
                             path={CategoryConstants.BUSINESS.toLowerCase()}
                             element={
                                 <CategoryPage
-                                    addLikedArticles={addLikedArticles}
+                                    addFavoriteArticle={addFavoriteArticle}
                                     categoryTitle={CategoryConstants.BUSINESS}
                                 />
                             }
@@ -89,7 +93,7 @@ const App = (props: Props) => {
                             path={CategoryConstants.INSPIRATION.toLowerCase()}
                             element={
                                 <CategoryPage
-                                    addLikedArticles={addLikedArticles}
+                                    addFavoriteArticle={addFavoriteArticle}
                                     categoryTitle={
                                         CategoryConstants.INSPIRATION
                                     }
@@ -100,7 +104,7 @@ const App = (props: Props) => {
                             path={CategoryConstants.SPORT.toLowerCase()}
                             element={
                                 <CategoryPage
-                                    addLikedArticles={addLikedArticles}
+                                    addFavoriteArticle={addFavoriteArticle}
                                     categoryTitle={CategoryConstants.SPORT}
                                 />
                             }

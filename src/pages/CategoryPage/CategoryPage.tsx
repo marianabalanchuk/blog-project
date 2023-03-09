@@ -7,7 +7,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import GetCategoryHelper from 'utils/GetCategoryHelper'
 
 type Props = {
-    addLikedArticles: () => void
+    addFavoriteArticle: (id: number) => void
     categoryTitle: string
 }
 
@@ -47,7 +47,9 @@ const CategoryPage = (props: Props) => {
                                     <IconButton
                                         aria-label="favorite"
                                         size="small"
-                                        onClick={props.addLikedArticles}
+                                        onClick={() =>
+                                            props.addFavoriteArticle(id)
+                                        }
                                     >
                                         <FavoriteBorderIcon
                                             fontSize="inherit"
