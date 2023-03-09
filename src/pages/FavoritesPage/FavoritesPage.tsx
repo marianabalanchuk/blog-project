@@ -21,7 +21,7 @@ const FavouritesPage = ({
     return (
         <>
             {Object.keys(favoriteArticles).map((id) => (
-                <>
+                <div key={id}>
                     <ArticlesListItem
                         id={articlesObject[parseInt(id)].id}
                         title={articlesObject[parseInt(id)].title}
@@ -36,7 +36,7 @@ const FavouritesPage = ({
                         removeFavoriteArticle={removeFavoriteArticle}
                         favoriteArticles={favoriteArticles}
                     />
-                </>
+                </div>
             ))}
         </>
     )

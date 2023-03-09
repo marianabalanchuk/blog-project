@@ -33,8 +33,6 @@ const ArticlesListItem = ({
     favoriteArticles,
 }: Props) => {
     const onLikeClick = (id: number) => {
-        console.log(favoriteArticles)
-        console.log(favoriteArticles[id])
         favoriteArticles[id]
             ? removeFavoriteArticle(id)
             : addFavoriteArticle(id)
@@ -42,38 +40,41 @@ const ArticlesListItem = ({
 
     return (
         <div className="article">
-            <img src={image} alt="article image" />
-
-            <Link to={category.route}>
-                <div
-                    className="article-category"
-                    style={{ backgroundColor: category.color }}
-                >
-                    {category.title}
-                </div>
-            </Link>
-
-            <div className="article-title">{title}</div>
-            <div className="article-info">
-                <div className="article-author">
-                    <Link to={'/'}>{author}</Link>
-                </div>
-                <div className="article-date">
-                    {moment(date).format('MMM DD, YYYY')}
-                </div>
-
-                <IconButton
-                    aria-label="favorite"
-                    size="small"
-                    onClick={() => onLikeClick(id)}
-                >
-                    <FavoriteBorderIcon
-                        fontSize="inherit"
-                        className="like-btn"
-                    />
-                </IconButton>
+            <div>
+                <img src={image} alt="article image" />
             </div>
-            <p className="article-summary">{summary}</p>
+
+            <div className="article-data">
+                <Link to={category.route}>
+                    <div
+                        className="article-category"
+                        style={{ backgroundColor: category.color }}
+                    >
+                        {category.title}
+                    </div>
+                </Link>
+                <div className="article-title">{title}</div>
+                <div className="article-info">
+                    <div className="article-author">
+                        <Link to={'/'}>{author}</Link>
+                    </div>
+                    <div className="article-date">
+                        {moment(date).format('MMM DD, YYYY')}
+                    </div>
+
+                    <IconButton
+                        aria-label="favorite"
+                        size="small"
+                        onClick={() => onLikeClick(id)}
+                    >
+                        <FavoriteBorderIcon
+                            fontSize="inherit"
+                            className="like-btn"
+                        />
+                    </IconButton>
+                </div>
+                <p className="article-summary">{summary}</p>
+            </div>
         </div>
     )
 }

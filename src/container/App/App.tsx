@@ -6,7 +6,7 @@ import Home from 'pages/HomePage/Home'
 import { Route, Routes } from 'react-router-dom'
 import PrivacyPolicyPage from 'pages/PrivacyPolicyPage/PrivacyPolicyPage'
 import AboutPage from 'pages/AboutPage/AboutPage'
-import FavouritesPage from 'pages/FavouritesPage/FavouritesPage'
+import FavoritesPage from 'pages/FavoritesPage/FavoritesPage'
 import SubscribePage from 'pages/SubscribePage/SubscribePage'
 import { useState } from 'react'
 import CategoryConstants from 'utils/CategoryConstants'
@@ -61,7 +61,7 @@ const App = (props: Props) => {
                         <Route
                             path="/favourites"
                             element={
-                                <FavouritesPage
+                                <FavoritesPage
                                     favoriteArticles={favoriteArticles}
                                     addFavoriteArticle={addFavoriteArticle}
                                     removeFavoriteArticle={
@@ -74,7 +74,11 @@ const App = (props: Props) => {
                             path={CategoryConstants.HEALTH.toLowerCase()}
                             element={
                                 <CategoryPage
+                                    favoriteArticles={favoriteArticles}
                                     addFavoriteArticle={addFavoriteArticle}
+                                    removeFavoriteArticle={
+                                        removeFavoriteArticle
+                                    }
                                     categoryTitle={CategoryConstants.HEALTH}
                                 />
                             }
@@ -84,7 +88,11 @@ const App = (props: Props) => {
                             path={CategoryConstants.BUSINESS.toLowerCase()}
                             element={
                                 <CategoryPage
+                                    favoriteArticles={favoriteArticles}
                                     addFavoriteArticle={addFavoriteArticle}
+                                    removeFavoriteArticle={
+                                        removeFavoriteArticle
+                                    }
                                     categoryTitle={CategoryConstants.BUSINESS}
                                 />
                             }
@@ -93,7 +101,11 @@ const App = (props: Props) => {
                             path={CategoryConstants.INSPIRATION.toLowerCase()}
                             element={
                                 <CategoryPage
+                                    favoriteArticles={favoriteArticles}
                                     addFavoriteArticle={addFavoriteArticle}
+                                    removeFavoriteArticle={
+                                        removeFavoriteArticle
+                                    }
                                     categoryTitle={
                                         CategoryConstants.INSPIRATION
                                     }
@@ -104,7 +116,11 @@ const App = (props: Props) => {
                             path={CategoryConstants.SPORT.toLowerCase()}
                             element={
                                 <CategoryPage
+                                    favoriteArticles={favoriteArticles}
                                     addFavoriteArticle={addFavoriteArticle}
+                                    removeFavoriteArticle={
+                                        removeFavoriteArticle
+                                    }
                                     categoryTitle={CategoryConstants.SPORT}
                                 />
                             }
