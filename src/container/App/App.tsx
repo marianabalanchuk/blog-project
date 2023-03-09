@@ -13,7 +13,22 @@ import CategoryConstants from 'utils/CategoryConstants'
 import CategoryPage from 'pages/CategoryPage/CategoryPage'
 
 type Props = {}
+
+type FavoriteArticlesType = {
+    [id: number]: number
+}
+
 const App = (props: Props) => {
+    const [favoriteArticles, setFavoriteArticles] =
+        useState<FavoriteArticlesType>({})
+
+    const addFavoriteArticle = (id: number) => {
+        setFavoriteArticles((prevState) => ({
+            ...prevState,
+            [id]: prevState[id],
+        }))
+    }
+
     const [likedArticles, setLikedArticles] = useState(0)
 
     const addLikedArticles = () => {
@@ -29,7 +44,10 @@ const App = (props: Props) => {
                         <Route
                             path="/"
                             element={
-                                <Home addLikedArticles={addLikedArticles} />
+                                <Home
+                                    addLikedArticles={addLikedArticles}
+                                    addFavoriteArticle={addFavoriteArticle}
+                                />
                             }
                         />
                         <Route
@@ -40,7 +58,13 @@ const App = (props: Props) => {
                         <Route path="/subscribe" element={<SubscribePage />} />
                         <Route
                             path="/favourites"
-                            element={<FavouritesPage />}
+                            element={
+                                <FavouritesPage
+                                    favoriteArticles={favoriteArticles}
+                                    addLikedArticles={addLikedArticles}
+                                    addFavoriteArticle={addFavoriteArticle}
+                                />
+                            }
                         />
                         <Route
                             path={CategoryConstants.HEALTH.toLowerCase()}
