@@ -17,6 +17,7 @@ const Home = (props: Props) => {
                 <MainHomeSlider />
                 <SideHomeSlider />
             </div>
+
             <div className="categories">
                 <CategoriesList />
             </div>

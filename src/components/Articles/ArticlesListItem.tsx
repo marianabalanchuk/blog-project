@@ -1,9 +1,12 @@
-import { IconButton } from '@mui/material'
+import { IconButton, Modal } from '@mui/material'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import './ArticleListItem.scss'
 import moment from 'moment'
 import { Category } from 'utils/CategoriesArray'
 import { Link } from 'react-router-dom'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import RemoveConfirmation from 'components/RemoveConfirmation/RemoveConfirmation'
+import { useState } from 'react'
 
 type Props = {
     id: number
@@ -32,14 +35,25 @@ const ArticlesListItem = ({
     removeFavoriteArticle,
     favoriteArticles,
 }: Props) => {
+    const [isOpenModal, setIsOpenModal] = useState(false)
+
     const onLikeClick = (id: number) => {
-        favoriteArticles[id]
-            ? removeFavoriteArticle(id)
-            : addFavoriteArticle(id)
+        favoriteArticles[id] ? setIsOpenModal(true) : addFavoriteArticle(id)
+    }
+
+    const removeArticle = (isTrue: boolean) => {
+        if (isTrue) {
+            removeFavoriteArticle(id)
+        }
+        setIsOpenModal(false)
     }
 
     return (
         <div className="article">
+            <RemoveConfirmation
+                open={isOpenModal}
+                removeArticle={removeArticle}
+            />
             <div>
                 <img src={image} alt="article image" />
             </div>
@@ -67,10 +81,23 @@ const ArticlesListItem = ({
                         size="small"
                         onClick={() => onLikeClick(id)}
                     >
-                        <FavoriteBorderIcon
-                            fontSize="inherit"
-                            className="like-btn"
-                        />
+                        {favoriteArticles[id] ? (
+                            <FavoriteIcon
+                                fontSize="inherit"
+                                className="like-btn"
+                                style={{
+                                    color: '#ff3152',
+                                }}
+                            />
+                        ) : (
+                            <FavoriteBorderIcon
+                                fontSize="inherit"
+                                className="like-btn"
+                                style={{
+                                    color: '#ff3152',
+                                }}
+                            />
+                        )}
                     </IconButton>
                 </div>
                 <p className="article-summary">{summary}</p>
