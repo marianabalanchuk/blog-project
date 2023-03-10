@@ -1,28 +1,20 @@
 import { Box, Button, Modal } from '@mui/material'
-import { useEffect, useState } from 'react'
 import './RemoveConfirmation.scss'
 
 type Props = {
     open: boolean
     removeArticle: (isConfirmed: boolean) => void
+    setOpen: (isTrue: boolean) => void
 }
 
 const RemoveConfirmation = (props: Props) => {
-    const [open, setOpen] = useState(props.open)
-
-    useEffect(() => {
-        if (props.open) {
-            setOpen(props.open)
-        }
-    }, [props.open])
-
     const close = (isTrue: boolean) => {
         props.removeArticle(isTrue)
-        setOpen(false)
+        props.setOpen(false)
     }
     return (
         <Modal
-            open={open}
+            open={props.open}
             onClose={() => close(false)}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"

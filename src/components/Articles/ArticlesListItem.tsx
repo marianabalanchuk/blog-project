@@ -45,7 +45,6 @@ const ArticlesListItem = ({
         if (isTrue) {
             removeFavoriteArticle(id)
         }
-        setIsOpenModal(false)
     }
 
     return (
@@ -53,6 +52,7 @@ const ArticlesListItem = ({
             <RemoveConfirmation
                 open={isOpenModal}
                 removeArticle={removeArticle}
+                setOpen={setIsOpenModal}
             />
             <div>
                 <img src={image} alt="article image" />
