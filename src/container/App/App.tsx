@@ -10,6 +10,7 @@ import FavoritesPage from 'pages/FavoritesPage/FavoritesPage'
 import SubscribePage from 'pages/SubscribePage/SubscribePage'
 import CategoryConstants from 'utils/CategoryConstants'
 import CategoryPage from 'pages/CategoryPage/CategoryPage'
+import ArticlePage from 'pages/ArticlePage/ArticlePage'
 
 type Props = {}
 
@@ -26,6 +27,7 @@ const App = (props: Props) => {
                             element={<PrivacyPolicyPage />}
                         />
                         <Route path="/about" element={<AboutPage />} />
+                        <Route path="/article/:id" element={<ArticlePage />} />
                         <Route path="/subscribe" element={<SubscribePage />} />
                         <Route path="/favourites" element={<FavoritesPage />} />
                         <Route

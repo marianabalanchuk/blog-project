@@ -7,9 +7,11 @@ export type Article = {
     author: string
     date: Date
     image: string
+    image2?: string
     summary: string
     mainslider: boolean
     sideslider: boolean
+    content?: string
 }
 
 const ArticlesArray: Article[] = [
@@ -19,11 +21,13 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.HEALTH,
         author: 'Michael',
         date: new Date('07.23.2022'),
-        image: 'images/article1.jpeg',
+        image: '/images/article1.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
         sideslider: false,
+        content:
+            'Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem Donec vehicula luctus nunc in laoreet Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum. Proin viverra orci a leo suscipit placerat. Sed feugiat posuere semper. Cras vitae mi erat, posuere mollis arcu. Pellentesque iaculis gravida nulla ac hendrerit.Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in Nulla a magna at diam consequat semper eu vitae elit. In hac habitasse platea dictumst. Many of life’s failures are people who did not realize how close they were to success when they gave up Find the Best Tour for This Summer Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis Praesent pharetra semper purus, a vehicula massa interdum in. Nulla a magna at diam consequat semper eu vitae elit. Thomas A. Edison Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in. Sed feugiat posuere semper Cras vitae mi erat, posuere mollis arcu. Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in. Nulla a magna at diam consequat semper eu vitae elit. In hac habitasse platea dictumst.',
     },
     {
         id: 2,
@@ -31,11 +35,13 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.BUSINESS,
         author: 'Anna',
         date: new Date('07.24.2022'),
-        image: 'images/article2.jpg',
+        image: '/images/article2.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
         sideslider: false,
+        content:
+            'Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem Donec vehicula luctus nunc in laoreet Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum. Proin viverra orci a leo suscipit placerat. Sed feugiat posuere semper. Cras vitae mi erat, posuere mollis arcu. Pellentesque iaculis gravida nulla ac hendrerit.Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in Nulla a magna at diam consequat semper eu vitae elit. In hac habitasse platea dictumst. Many of life’s failures are people who did not realize how close they were to success when they gave up Find the Best Tour for This Summer Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis Praesent pharetra semper purus, a vehicula massa interdum in. Nulla a magna at diam consequat semper eu vitae elit. Thomas A. Edison Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in. Sed feugiat posuere semper Cras vitae mi erat, posuere mollis arcu. Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in. Nulla a magna at diam consequat semper eu vitae elit. In hac habitasse platea dictumst.',
     },
     {
         id: 3,
@@ -43,11 +49,13 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.INSPIRATION,
         author: 'John',
         date: new Date('08.15.2021'),
-        image: 'images/article3.jpg',
+        image: '/images/article3.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
         sideslider: true,
+        content:
+            'Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem Donec vehicula luctus nunc in laoreet Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum. Proin viverra orci a leo suscipit placerat. Sed feugiat posuere semper. Cras vitae mi erat, posuere mollis arcu. Pellentesque iaculis gravida nulla ac hendrerit.Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in Nulla a magna at diam consequat semper eu vitae elit. In hac habitasse platea dictumst. Many of life’s failures are people who did not realize how close they were to success when they gave up Find the Best Tour for This Summer Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis Praesent pharetra semper purus, a vehicula massa interdum in. Nulla a magna at diam consequat semper eu vitae elit. Thomas A. Edison Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in. Sed feugiat posuere semper Cras vitae mi erat, posuere mollis arcu. Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in. Nulla a magna at diam consequat semper eu vitae elit. In hac habitasse platea dictumst.',
     },
     {
         id: 4,
@@ -55,11 +63,13 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.SPORT,
         author: 'Michael',
         date: new Date('11.29.2022'),
-        image: 'images/article4.webp',
+        image: '/images/article4.webp',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: true,
         sideslider: false,
+        content:
+            'Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem Donec vehicula luctus nunc in laoreet Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum. Proin viverra orci a leo suscipit placerat. Sed feugiat posuere semper. Cras vitae mi erat, posuere mollis arcu. Pellentesque iaculis gravida nulla ac hendrerit.Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in Nulla a magna at diam consequat semper eu vitae elit. In hac habitasse platea dictumst. Many of life’s failures are people who did not realize how close they were to success when they gave up Find the Best Tour for This Summer Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis Praesent pharetra semper purus, a vehicula massa interdum in. Nulla a magna at diam consequat semper eu vitae elit. Thomas A. Edison Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in. Sed feugiat posuere semper Cras vitae mi erat, posuere mollis arcu. Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in. Nulla a magna at diam consequat semper eu vitae elit. In hac habitasse platea dictumst.',
     },
     {
         id: 5,
@@ -67,11 +77,13 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.HEALTH,
         author: 'Anna',
         date: new Date('10.24.2022'),
-        image: 'images/article5.jpg',
+        image: '/images/article5.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
         sideslider: false,
+        content:
+            'Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem Donec vehicula luctus nunc in laoreet Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum. Proin viverra orci a leo suscipit placerat. Sed feugiat posuere semper. Cras vitae mi erat, posuere mollis arcu. Pellentesque iaculis gravida nulla ac hendrerit.Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in Nulla a magna at diam consequat semper eu vitae elit. In hac habitasse platea dictumst. Many of life’s failures are people who did not realize how close they were to success when they gave up Find the Best Tour for This Summer Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis Praesent pharetra semper purus, a vehicula massa interdum in. Nulla a magna at diam consequat semper eu vitae elit. Thomas A. Edison Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in. Sed feugiat posuere semper Cras vitae mi erat, posuere mollis arcu. Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis. Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi. Praesent pharetra semper purus, a vehicula massa interdum in. Nulla a magna at diam consequat semper eu vitae elit. In hac habitasse platea dictumst.',
     },
     {
         id: 6,
@@ -79,7 +91,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.BUSINESS,
         author: 'John',
         date: new Date('08.03.2022'),
-        image: 'images/article6.jpg',
+        image: '/images/article6.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -91,7 +103,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.INSPIRATION,
         author: 'Michael',
         date: new Date('10.19.2022'),
-        image: 'images/article7.jpg',
+        image: '/images/article7.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: true,
@@ -103,7 +115,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.SPORT,
         author: 'Anna',
         date: new Date('02.11.2022'),
-        image: 'images/article8.jpg',
+        image: '/images/article8.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -115,7 +127,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.HEALTH,
         author: 'John',
         date: new Date('05.27.2022'),
-        image: 'images/article9.jpeg',
+        image: '/images/article9.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -127,7 +139,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.BUSINESS,
         author: 'Michael',
         date: new Date('06.02.2022'),
-        image: 'images/article10.jpg',
+        image: '/images/article10.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -139,7 +151,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.INSPIRATION,
         author: 'Anna',
         date: new Date('12.19.2022'),
-        image: 'images/article11.jpeg',
+        image: '/images/article11.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -151,7 +163,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.SPORT,
         author: 'John',
         date: new Date('08.30.2022'),
-        image: 'images/article12.jpg',
+        image: '/images/article12.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -163,7 +175,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.HEALTH,
         author: 'Michael',
         date: new Date('04.23.2022'),
-        image: 'images/article13.jpeg',
+        image: '/images/article13.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -175,7 +187,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.BUSINESS,
         author: 'Anna',
         date: new Date('05.08.2022'),
-        image: 'images/article14.jpg',
+        image: '/images/article14.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: true,
@@ -187,7 +199,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.INSPIRATION,
         author: 'John',
         date: new Date('05.16.2022'),
-        image: 'images/article15.jpeg',
+        image: '/images/article15.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -199,7 +211,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.SPORT,
         author: 'Michael',
         date: new Date('09.01.2022'),
-        image: 'images/article16.jpg',
+        image: '/images/article16.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -211,7 +223,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.HEALTH,
         author: 'Anna',
         date: new Date('09.17.2022'),
-        image: 'images/article17.jpeg',
+        image: '/images/article17.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -223,7 +235,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.BUSINESS,
         author: 'John',
         date: new Date('02.22.2021'),
-        image: 'images/article18.jpg',
+        image: '/images/article18.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -235,7 +247,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.INSPIRATION,
         author: 'Michael',
         date: new Date('01.21.2021'),
-        image: 'images/article19.jpg',
+        image: '/images/article19.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: true,
@@ -247,7 +259,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.SPORT,
         author: 'Anna',
         date: new Date('09.22.2021'),
-        image: 'images/article20.jpeg',
+        image: '/images/article20.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -259,7 +271,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.HEALTH,
         author: 'John',
         date: new Date('05.05.2021'),
-        image: 'images/article21.jpeg',
+        image: '/images/article21.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -271,7 +283,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.BUSINESS,
         author: 'Michael',
         date: new Date('10.30.2020'),
-        image: 'images/article22.jpeg',
+        image: '/images/article22.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -283,7 +295,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.INSPIRATION,
         author: 'Anna',
         date: new Date('01.21.2021'),
-        image: 'images/article23.jpg',
+        image: '/images/article23.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -295,7 +307,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.SPORT,
         author: 'John',
         date: new Date('01.21.2021'),
-        image: 'images/article24.jpeg',
+        image: '/images/article24.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -307,7 +319,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.HEALTH,
         author: 'Michael',
         date: new Date('01.21.2021'),
-        image: 'images/article25.jpg',
+        image: '/images/article25.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -319,7 +331,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.BUSINESS,
         author: 'Anna',
         date: new Date('01.21.2021'),
-        image: 'images/article26.jpg',
+        image: '/images/article26.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -331,7 +343,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.INSPIRATION,
         author: 'John',
         date: new Date('01.21.2021'),
-        image: 'images/article27.jpg',
+        image: '/images/article27.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -343,7 +355,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.SPORT,
         author: 'Michael',
         date: new Date('01.21.2021'),
-        image: 'images/article28.jpg',
+        image: '/images/article28.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -355,7 +367,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.HEALTH,
         author: 'Anna',
         date: new Date('01.21.2021'),
-        image: 'images/article29.jpg',
+        image: '/images/article29.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -367,7 +379,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.BUSINESS,
         author: 'John',
         date: new Date('01.21.2021'),
-        image: 'images/article30.jpeg',
+        image: '/images/article30.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: true,
@@ -379,7 +391,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.INSPIRATION,
         author: 'Michael',
         date: new Date('01.21.2021'),
-        image: 'images/article31.jpg',
+        image: '/images/article31.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -391,7 +403,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.SPORT,
         author: 'Anna',
         date: new Date('01.21.2021'),
-        image: 'images/article32.jpeg',
+        image: '/images/article32.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -403,7 +415,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.HEALTH,
         author: 'John',
         date: new Date('01.21.2021'),
-        image: 'images/article33.jpeg',
+        image: '/images/article33.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -415,7 +427,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.BUSINESS,
         author: 'Michael',
         date: new Date('01.21.2021'),
-        image: 'images/article34.jpg',
+        image: '/images/article34.jpg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -427,7 +439,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.INSPIRATION,
         author: 'Anna',
         date: new Date('01.21.2021'),
-        image: 'images/article35.jpeg',
+        image: '/images/article35.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,
@@ -439,7 +451,7 @@ const ArticlesArray: Article[] = [
         category: CategoryConstants.BUSINESS,
         author: 'John',
         date: new Date('01.21.2021'),
-        image: 'images/article36.jpeg',
+        image: '/images/article36.jpeg',
         summary:
             'Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.',
         mainslider: false,

@@ -7,7 +7,7 @@ type Props = {}
 const Footer = (props: Props) => {
     return (
         <div className="footer">
-            <Logo image="images/logo_white.png" width={200} />
+            <Logo image="/images/logo_white.png" width={200} />
             <div>
                 <NavLink to="/about" className="doc-link">
                     About Us

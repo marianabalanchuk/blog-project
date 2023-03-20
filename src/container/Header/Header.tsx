@@ -14,7 +14,7 @@ const Header = (props: Props) => {
         <AppBar position="fixed" className="app-bar">
             <Container>
                 <Toolbar>
-                    <Logo image="images/logo_black.png" width={140} />
+                    <Logo image="/images/logo_black.png" width={140} />
                     <Menu />
 
                     <IconButton

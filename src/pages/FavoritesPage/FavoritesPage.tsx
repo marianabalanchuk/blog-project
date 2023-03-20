@@ -12,7 +12,7 @@ type Props = {
 const FavouritesPage = ({
     articlesObject = getArticlesObject(ArticlesArray),
 }: Props) => {
-    const favoriteArticles = useAppSelector((state) => state.productsLike)
+    const favoriteArticles = useAppSelector((store) => store.articlesLike)
     return (
         <div className="favorites-pg-container">
             {Object.keys(favoriteArticles).map((id) => (

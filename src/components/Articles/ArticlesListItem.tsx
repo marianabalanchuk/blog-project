@@ -29,7 +29,7 @@ const ArticlesListItem = ({
     image,
     summary,
 }: Props) => {
-    const isLiked = useAppSelector((state) => state.productsLike[id])
+    const isLiked = useAppSelector((store) => store.articlesLike[id])
     const dispatch = useAppDispatch()
 
     const [isOpenModal, setIsOpenModal] = useState(false)
@@ -64,11 +64,16 @@ const ArticlesListItem = ({
                         {category.title}
                     </div>
                 </Link>
-                <div className="article-title">{title}</div>
+
+                <Link to={`/article/${id}`} className="article-title">
+                    {title}
+                </Link>
+
                 <div className="article-info">
                     <div className="article-author">
                         <Link to={'/'}>{author}</Link>
                     </div>
+
                     <div className="article-date">
                         {moment(date).format('MMM DD, YYYY')}
                     </div>

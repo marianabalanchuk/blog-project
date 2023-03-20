@@ -9,7 +9,7 @@ import { useAppSelector } from 'redux/hooks'
 type Props = {}
 
 const Menu = (props: Props) => {
-    const favoriteArticles = useAppSelector((state) => state.productsLike)
+    const favoriteArticles = useAppSelector((store) => store.articlesLike)
     return (
         <div className="nav-menu">
             <MenuItem to={`/${CategoryConstants.BUSINESS.toLowerCase()}`}>
