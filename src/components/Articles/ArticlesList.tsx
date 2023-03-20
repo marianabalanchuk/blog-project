@@ -3,13 +3,7 @@ import ArticlesArray from 'utils/ArticlesArray'
 import GetCategoryHelper from 'utils/GetCategoryHelper'
 import ArticlesListItem from './ArticlesListItem'
 
-type Props = {
-    addFavoriteArticle: (id: number) => void
-    removeFavoriteArticle: (id: number) => void
-    favoriteArticles: {
-        [id: number]: number
-    }
-}
+type Props = {}
 
 const ArticlesList = (props: Props) => {
     return (
@@ -27,13 +21,6 @@ const ArticlesList = (props: Props) => {
                                     date={date}
                                     image={image}
                                     summary={summary}
-                                    addFavoriteArticle={
-                                        props.addFavoriteArticle
-                                    }
-                                    removeFavoriteArticle={
-                                        props.removeFavoriteArticle
-                                    }
-                                    favoriteArticles={props.favoriteArticles}
                                 />
                             </Grid>
                         )

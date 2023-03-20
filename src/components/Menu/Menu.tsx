@@ -4,14 +4,12 @@ import MenuItem from './MenuItem'
 import './Menu.scss'
 import { NavLink } from 'react-router-dom'
 import CategoryConstants from 'utils/CategoryConstants'
+import { useAppSelector } from 'redux/hooks'
 
-type Props = {
-    favoriteArticles: {
-        [id: number]: number
-    }
-}
+type Props = {}
 
 const Menu = (props: Props) => {
+    const favoriteArticles = useAppSelector((state) => state.productsLike)
     return (
         <div className="nav-menu">
             <MenuItem to={`/${CategoryConstants.BUSINESS.toLowerCase()}`}>
@@ -35,7 +33,7 @@ const Menu = (props: Props) => {
                 >
                     <FavoriteBorderIcon fontSize={'medium'} />
                     <div className="like-counter">
-                        {Object.keys(props.favoriteArticles).length}
+                        {Object.keys(favoriteArticles).length}
                     </div>
                 </NavLink>
             </IconButton>

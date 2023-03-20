@@ -1,12 +1,14 @@
-import { IconButton, Modal } from '@mui/material'
+import { IconButton } from '@mui/material'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import './ArticleListItem.scss'
 import moment from 'moment'
 import { Category } from 'utils/CategoriesArray'
 import { Link } from 'react-router-dom'
 import FavoriteIcon from '@mui/icons-material/Favorite'
-import RemoveConfirmation from 'components/RemoveConfirmation/RemoveConfirmation'
 import { useState } from 'react'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { addToFavorites, removeFromFavorites } from 'redux/likeReducer'
+import RemoveConfirmation from 'components/RemoveConfirmation/RemoveConfirmation'
 
 type Props = {
     id: number
@@ -16,11 +18,6 @@ type Props = {
     date: Date
     image: string
     summary: string
-    addFavoriteArticle: (id: number) => void
-    removeFavoriteArticle: (id: number) => void
-    favoriteArticles: {
-        [id: number]: number
-    }
 }
 
 const ArticlesListItem = ({
@@ -31,19 +28,19 @@ const ArticlesListItem = ({
     date,
     image,
     summary,
-    addFavoriteArticle,
-    removeFavoriteArticle,
-    favoriteArticles,
 }: Props) => {
+    const isLiked = useAppSelector((state) => state.productsLike[id])
+    const dispatch = useAppDispatch()
+
     const [isOpenModal, setIsOpenModal] = useState(false)
 
     const onLikeClick = (id: number) => {
-        favoriteArticles[id] ? setIsOpenModal(true) : addFavoriteArticle(id)
+        isLiked ? setIsOpenModal(true) : dispatch(addToFavorites(id))
     }
 
     const removeArticle = (isTrue: boolean) => {
         if (isTrue) {
-            removeFavoriteArticle(id)
+            dispatch(removeFromFavorites(id))
         }
     }
 
@@ -81,7 +78,7 @@ const ArticlesListItem = ({
                         size="small"
                         onClick={() => onLikeClick(id)}
                     >
-                        {favoriteArticles[id] ? (
+                        {isLiked ? (
                             <FavoriteIcon
                                 fontSize="inherit"
                                 className="like-btn"

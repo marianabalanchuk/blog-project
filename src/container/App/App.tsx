@@ -8,77 +8,30 @@ import PrivacyPolicyPage from 'pages/PrivacyPolicyPage/PrivacyPolicyPage'
 import AboutPage from 'pages/AboutPage/AboutPage'
 import FavoritesPage from 'pages/FavoritesPage/FavoritesPage'
 import SubscribePage from 'pages/SubscribePage/SubscribePage'
-import { useState } from 'react'
 import CategoryConstants from 'utils/CategoryConstants'
 import CategoryPage from 'pages/CategoryPage/CategoryPage'
-import { omit } from 'lodash'
 
 type Props = {}
 
-type FavoriteArticlesType = {
-    [id: number]: number
-}
-
 const App = (props: Props) => {
-    const [favoriteArticles, setFavoriteArticles] =
-        useState<FavoriteArticlesType>({})
-
-    const addFavoriteArticle = (id: number) => {
-        setFavoriteArticles((prevState) => ({
-            ...prevState,
-            [id]: id,
-        }))
-    }
-
-    const removeFavoriteArticle = (id: number) => {
-        setFavoriteArticles((prevState) => omit(prevState, id))
-    }
-
     return (
         <>
             <StyledEngineProvider injectFirst>
-                <Header favoriteArticles={favoriteArticles} />
+                <Header />
                 <Container className="main-container">
                     <Routes>
-                        <Route
-                            path="/"
-                            element={
-                                <Home
-                                    removeFavoriteArticle={
-                                        removeFavoriteArticle
-                                    }
-                                    addFavoriteArticle={addFavoriteArticle}
-                                    favoriteArticles={favoriteArticles}
-                                />
-                            }
-                        />
+                        <Route path="/" element={<Home />} />
                         <Route
                             path="/privacypolicy"
                             element={<PrivacyPolicyPage />}
                         />
                         <Route path="/about" element={<AboutPage />} />
                         <Route path="/subscribe" element={<SubscribePage />} />
-                        <Route
-                            path="/favourites"
-                            element={
-                                <FavoritesPage
-                                    favoriteArticles={favoriteArticles}
-                                    addFavoriteArticle={addFavoriteArticle}
-                                    removeFavoriteArticle={
-                                        removeFavoriteArticle
-                                    }
-                                />
-                            }
-                        />
+                        <Route path="/favourites" element={<FavoritesPage />} />
                         <Route
                             path={CategoryConstants.HEALTH.toLowerCase()}
                             element={
                                 <CategoryPage
-                                    favoriteArticles={favoriteArticles}
-                                    addFavoriteArticle={addFavoriteArticle}
-                                    removeFavoriteArticle={
-                                        removeFavoriteArticle
-                                    }
                                     categoryTitle={CategoryConstants.HEALTH}
                                 />
                             }
@@ -88,11 +41,6 @@ const App = (props: Props) => {
                             path={CategoryConstants.BUSINESS.toLowerCase()}
                             element={
                                 <CategoryPage
-                                    favoriteArticles={favoriteArticles}
-                                    addFavoriteArticle={addFavoriteArticle}
-                                    removeFavoriteArticle={
-                                        removeFavoriteArticle
-                                    }
                                     categoryTitle={CategoryConstants.BUSINESS}
                                 />
                             }
@@ -101,11 +49,6 @@ const App = (props: Props) => {
                             path={CategoryConstants.INSPIRATION.toLowerCase()}
                             element={
                                 <CategoryPage
-                                    favoriteArticles={favoriteArticles}
-                                    addFavoriteArticle={addFavoriteArticle}
-                                    removeFavoriteArticle={
-                                        removeFavoriteArticle
-                                    }
                                     categoryTitle={
                                         CategoryConstants.INSPIRATION
                                     }
@@ -116,11 +59,6 @@ const App = (props: Props) => {
                             path={CategoryConstants.SPORT.toLowerCase()}
                             element={
                                 <CategoryPage
-                                    favoriteArticles={favoriteArticles}
-                                    addFavoriteArticle={addFavoriteArticle}
-                                    removeFavoriteArticle={
-                                        removeFavoriteArticle
-                                    }
                                     categoryTitle={CategoryConstants.SPORT}
                                 />
                             }

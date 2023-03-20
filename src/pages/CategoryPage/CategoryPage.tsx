@@ -4,11 +4,6 @@ import GetCategoryHelper from 'utils/GetCategoryHelper'
 import ArticlesListItem from 'components/Articles/ArticlesListItem'
 
 type Props = {
-    addFavoriteArticle: (id: number) => void
-    removeFavoriteArticle: (id: number) => void
-    favoriteArticles: {
-        [id: number]: number
-    }
     categoryTitle: string
 }
 
@@ -31,11 +26,6 @@ const CategoryPage = (props: Props) => {
                                 date={date}
                                 image={image}
                                 summary={summary}
-                                addFavoriteArticle={props.addFavoriteArticle}
-                                removeFavoriteArticle={
-                                    props.removeFavoriteArticle
-                                }
-                                favoriteArticles={props.favoriteArticles}
                             />
                         </div>
                     )

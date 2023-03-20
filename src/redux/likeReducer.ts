@@ -1,25 +1,24 @@
-import { createSlice, AnyAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
+import { omit } from 'lodash'
 
-type ProductsLike = {
-    [id: number]: boolean
+type FavoriteArticles = {
+    [id: number]: number
 }
 
-export const initialState: ProductsLike = {
-    1: true,
-    2: true,
-}
+export const initialState: FavoriteArticles = {}
 
 export const likeSlice = createSlice({
     name: 'like',
     initialState,
     reducers: {
-        toggleLike: (state, action) => ({
+        addToFavorites: (state, action) => ({
             ...state,
-            [action.payload]: !state[action.payload],
+            [action.payload]: action.payload,
         }),
+        removeFromFavorites: (state, action) => omit(state, action.payload),
     },
 })
 
-export const { toggleLike } = likeSlice.actions
+export const { addToFavorites, removeFromFavorites } = likeSlice.actions
 
 export default likeSlice.reducer
