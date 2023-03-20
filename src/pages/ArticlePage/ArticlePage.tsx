@@ -1,13 +1,16 @@
-import { IconButton, Typography } from '@mui/material'
-import moment from 'moment'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import ArticlesArray, { Article, getArticlesObject } from 'utils/ArticlesArray'
-import FavoriteIcon from '@mui/icons-material/Favorite'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { useState } from 'react'
 import { addToFavorites, removeFromFavorites } from 'redux/likeReducer'
-import RemoveConfirmation from 'components/RemoveConfirmation/RemoveConfirmation'
+import GetCategoryHelper from 'utils/GetCategoryHelper'
+import ArticlesListItem from 'components/Articles/ArticlesListItem'
+import {
+    FacebookIcon,
+    FacebookShareButton,
+    TwitterIcon,
+    TwitterShareButton,
+} from 'react-share'
 
 type Props = {
     articlesObject?: {
@@ -37,52 +40,29 @@ const ArticlePage = ({
     }
     return (
         <>
-            <RemoveConfirmation
-                open={isOpenModal}
-                removeArticle={removeArticle}
-                setOpen={setIsOpenModal}
+            <ArticlesListItem
+                id={parseInt(id!)}
+                title={article.title}
+                category={GetCategoryHelper(article.category)}
+                author={article.author}
+                date={article.date}
+                image={article.image}
+                summary={article.summary}
             />
+            <div className="share_btns">
+                <FacebookShareButton
+                    url={'http://localhost:3000/article/1'}
+                    quote={'Dummy text!'}
+                    hashtag="#muo"
+                >
+                    <FacebookIcon size={32} round />
+                </FacebookShareButton>
 
-            {article.category}
-
-            <div className="article-author">
-                <Link to={'/'}>{article.author}</Link>
+                <TwitterShareButton url={'http://localhost:3000/article/1'}>
+                    <TwitterIcon size={32} round />
+                </TwitterShareButton>
             </div>
 
-            {article.title}
-            <hr />
-            {article.summary}
-
-            <div className="article-date">
-                {moment(article.date).format('MMM DD, YYYY')}
-            </div>
-
-            <IconButton
-                aria-label="favorite"
-                size="small"
-                onClick={() => onLikeClick(parseInt(id!))}
-            >
-                {isLiked ? (
-                    <FavoriteIcon
-                        fontSize="inherit"
-                        className="like-btn"
-                        style={{
-                            color: '#ff3152',
-                        }}
-                    />
-                ) : (
-                    <FavoriteBorderIcon
-                        fontSize="inherit"
-                        className="like-btn"
-                        style={{
-                            color: '#ff3152',
-                        }}
-                    />
-                )}
-            </IconButton>
-            <div>
-                <img src={article.image} alt="article image" />
-            </div>
             <p
                 dangerouslySetInnerHTML={{
                     __html: article.content!,
