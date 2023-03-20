@@ -52,7 +52,11 @@ const ArticlesListItem = ({
                 setOpen={setIsOpenModal}
             />
             <div>
-                <img src={image} alt="article image" />
+                <img
+                    src={image}
+                    alt="article image"
+                    className="article-image"
+                />
             </div>
 
             <div className="article-data">

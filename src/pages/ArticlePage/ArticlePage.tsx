@@ -1,8 +1,5 @@
 import { useParams } from 'react-router-dom'
 import ArticlesArray, { Article, getArticlesObject } from 'utils/ArticlesArray'
-import { useAppDispatch, useAppSelector } from 'redux/hooks'
-import { useState } from 'react'
-import { addToFavorites, removeFromFavorites } from 'redux/likeReducer'
 import GetCategoryHelper from 'utils/GetCategoryHelper'
 import ArticlesListItem from 'components/Articles/ArticlesListItem'
 import {
@@ -11,6 +8,7 @@ import {
     TwitterIcon,
     TwitterShareButton,
 } from 'react-share'
+import './ArticlePage.scss'
 
 type Props = {
     articlesObject?: {
@@ -23,23 +21,8 @@ const ArticlePage = ({
 }: Props) => {
     const { id } = useParams()
     const article = articlesObject[parseInt(id!)]
-
-    const isLiked = useAppSelector((store) => store.articlesLike[parseInt(id!)])
-    const dispatch = useAppDispatch()
-
-    const [isOpenModal, setIsOpenModal] = useState(false)
-
-    const onLikeClick = (id: number) => {
-        isLiked ? setIsOpenModal(true) : dispatch(addToFavorites(id))
-    }
-
-    const removeArticle = (isTrue: boolean) => {
-        if (isTrue) {
-            dispatch(removeFromFavorites(id))
-        }
-    }
     return (
-        <>
+        <div className="article-page-container">
             <ArticlesListItem
                 id={parseInt(id!)}
                 title={article.title}
@@ -51,14 +34,20 @@ const ArticlePage = ({
             />
             <div className="share_btns">
                 <FacebookShareButton
-                    url={'http://localhost:3000/article/1'}
+                    url={
+                        'https://www.makeuseof.com/add-social-share-buttons-in-react/'
+                    }
                     quote={'Dummy text!'}
                     hashtag="#muo"
                 >
                     <FacebookIcon size={32} round />
                 </FacebookShareButton>
 
-                <TwitterShareButton url={'http://localhost:3000/article/1'}>
+                <TwitterShareButton
+                    url={
+                        'https://www.makeuseof.com/add-social-share-buttons-in-react/'
+                    }
+                >
                     <TwitterIcon size={32} round />
                 </TwitterShareButton>
             </div>
@@ -68,7 +57,7 @@ const ArticlePage = ({
                     __html: article.content!,
                 }}
             ></p>
-        </>
+        </div>
     )
 }
 

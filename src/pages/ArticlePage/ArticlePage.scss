@@ -1,0 +1,17 @@
+.article-page-container {
+    .article {
+        display: flex;
+        flex-direction: column-reverse;
+        img {
+            max-height: fit-content;
+            max-width: 100%;
+        }
+    }
+
+    .article-category {
+        position: static;
+    }
+    .article-title {
+        font-size: 37px;
+    }
+}
