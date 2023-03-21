@@ -1,3 +1,4 @@
+import AuthorsArray, { Author } from './AuthorsArray'
 import CategoryConstants from './CategoryConstants'
 
 export type Article = {
@@ -75,7 +76,7 @@ const ArticlesArray: Article[] = [
         id: 5,
         title: '5 Holiday Outfit Ideas for Thanksgiving or Christmas',
         category: CategoryConstants.HEALTH,
-        author: 'Anna',
+        author: 'John',
         date: new Date('10.24.2022'),
         image: '/images/article5.jpg',
         summary:
@@ -101,7 +102,7 @@ const ArticlesArray: Article[] = [
         id: 7,
         title: 'The Dress Style Influencers are Wearing Right Now',
         category: CategoryConstants.INSPIRATION,
-        author: 'Michael',
+        author: 'John',
         date: new Date('10.19.2022'),
         image: '/images/article7.jpg',
         summary:
@@ -137,7 +138,7 @@ const ArticlesArray: Article[] = [
         id: 10,
         title: 'It Really Great Holiday and Enjoy with the Fashion Style',
         category: CategoryConstants.BUSINESS,
-        author: 'Michael',
+        author: 'Anna',
         date: new Date('06.02.2022'),
         image: '/images/article10.jpg',
         summary:

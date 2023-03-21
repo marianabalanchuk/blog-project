@@ -1,6 +1,7 @@
 import ArticlesListItem from 'components/Articles/ArticlesListItem'
 import { useAppSelector } from 'redux/hooks'
 import ArticlesArray, { Article, getArticlesObject } from 'utils/ArticlesArray'
+import GetAuthorHelper from 'utils/GetAuthorHelper'
 import GetCategoryHelper from 'utils/GetCategoryHelper'
 import './FavoritesPage.scss'
 
@@ -23,7 +24,9 @@ const FavouritesPage = ({
                         category={GetCategoryHelper(
                             articlesObject[parseInt(id)].category
                         )}
-                        author={articlesObject[parseInt(id)].author}
+                        author={GetAuthorHelper(
+                            articlesObject[parseInt(id)].author
+                        )}
                         date={articlesObject[parseInt(id)].date}
                         image={articlesObject[parseInt(id)].image}
                         summary={articlesObject[parseInt(id)].summary}

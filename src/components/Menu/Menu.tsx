@@ -12,6 +12,7 @@ const Menu = (props: Props) => {
     const favoriteArticles = useAppSelector((store) => store.articlesLike)
     return (
         <div className="nav-menu">
+            <MenuItem to={`/authors`}>Authors</MenuItem>
             <MenuItem to={`/${CategoryConstants.BUSINESS.toLowerCase()}`}>
                 {CategoryConstants.BUSINESS}
             </MenuItem>

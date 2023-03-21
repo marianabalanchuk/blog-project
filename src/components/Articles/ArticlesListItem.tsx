@@ -9,12 +9,13 @@ import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { addToFavorites, removeFromFavorites } from 'redux/likeReducer'
 import RemoveConfirmation from 'components/RemoveConfirmation/RemoveConfirmation'
+import { Author } from 'utils/AuthorsArray'
 
 type Props = {
     id: number
     title: string
     category: Category
-    author?: string
+    author?: Author
     date: Date
     image: string
     summary: string
@@ -75,7 +76,7 @@ const ArticlesListItem = ({
 
                 <div className="article-info">
                     <div className="article-author">
-                        <Link to={'/'}>{author}</Link>
+                        <Link to={author?.route!}>{author?.name}</Link>
                     </div>
 
                     <div className="article-date">

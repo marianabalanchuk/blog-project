@@ -11,6 +11,8 @@ import SubscribePage from 'pages/SubscribePage/SubscribePage'
 import CategoryConstants from 'utils/CategoryConstants'
 import CategoryPage from 'pages/CategoryPage/CategoryPage'
 import ArticlePage from 'pages/ArticlePage/ArticlePage'
+import AuthorPage from 'pages/AuthorPage/SingleAuthorPage'
+import AllAuthorsPage from 'pages/AuthorPage/AllAuthorsPage'
 
 type Props = {}
 
@@ -26,6 +28,7 @@ const App = (props: Props) => {
                             path="/privacypolicy"
                             element={<PrivacyPolicyPage />}
                         />
+                        <Route path="/authors" element={<AllAuthorsPage />} />
                         <Route path="/about" element={<AboutPage />} />
                         <Route path="/article/:id" element={<ArticlePage />} />
                         <Route path="/subscribe" element={<SubscribePage />} />
@@ -64,6 +67,18 @@ const App = (props: Props) => {
                                     categoryTitle={CategoryConstants.SPORT}
                                 />
                             }
+                        />
+                        <Route
+                            path={'michael'}
+                            element={<AuthorPage authorName="Michael" />}
+                        />
+                        <Route
+                            path={'anna'}
+                            element={<AuthorPage authorName="Anna" />}
+                        />
+                        <Route
+                            path={'john'}
+                            element={<AuthorPage authorName="John" />}
                         />
                     </Routes>
                 </Container>
