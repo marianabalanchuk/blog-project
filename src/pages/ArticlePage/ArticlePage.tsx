@@ -3,12 +3,15 @@ import ArticlesArray, { Article, getArticlesObject } from 'utils/ArticlesArray'
 import GetCategoryHelper from 'utils/GetCategoryHelper'
 import ArticlesListItem from 'components/Articles/ArticlesListItem'
 import {
+    EmailIcon,
+    EmailShareButton,
     FacebookIcon,
     FacebookShareButton,
     TwitterIcon,
     TwitterShareButton,
 } from 'react-share'
 import './ArticlePage.scss'
+import { Avatar } from '@mui/material'
 
 type Props = {
     articlesObject?: {
@@ -27,11 +30,17 @@ const ArticlePage = ({
                 id={parseInt(id!)}
                 title={article.title}
                 category={GetCategoryHelper(article.category)}
-                author={article.author}
                 date={article.date}
                 image={article.image}
                 summary={article.summary}
             />
+
+            <Avatar
+                alt="Remy Sharp"
+                src="/images/Michael.jpg"
+                sx={{ width: 75, height: 75 }}
+            />
+
             <div className="share_btns">
                 <FacebookShareButton
                     url={
@@ -50,13 +59,22 @@ const ArticlePage = ({
                 >
                     <TwitterIcon size={32} round />
                 </TwitterShareButton>
+
+                <EmailShareButton
+                    url={
+                        'https://www.makeuseof.com/add-social-share-buttons-in-react/'
+                    }
+                >
+                    <EmailIcon size={32} round />
+                </EmailShareButton>
             </div>
 
-            <p
+            <div
+                className="article-content"
                 dangerouslySetInnerHTML={{
                     __html: article.content!,
                 }}
-            ></p>
+            ></div>
         </div>
     )
 }

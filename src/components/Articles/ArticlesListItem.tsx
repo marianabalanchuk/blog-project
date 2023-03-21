@@ -14,7 +14,7 @@ type Props = {
     id: number
     title: string
     category: Category
-    author: string
+    author?: string
     date: Date
     image: string
     summary: string
