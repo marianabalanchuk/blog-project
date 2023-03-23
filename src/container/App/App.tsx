@@ -11,8 +11,8 @@ import SubscribePage from 'pages/SubscribePage/SubscribePage'
 import CategoryConstants from 'utils/CategoryConstants'
 import CategoryPage from 'pages/CategoryPage/CategoryPage'
 import ArticlePage from 'pages/ArticlePage/ArticlePage'
-import AuthorPage from 'pages/AuthorPage/SingleAuthorPage'
 import AllAuthorsPage from 'pages/AuthorPage/AllAuthorsPage'
+import SingleAuthorPage from 'pages/AuthorPage/SingleAuthorPage'
 
 type Props = {}
 
@@ -70,15 +70,15 @@ const App = (props: Props) => {
                         />
                         <Route
                             path={'michael'}
-                            element={<AuthorPage authorName="Michael" />}
+                            element={<SingleAuthorPage authorName="Michael" />}
                         />
                         <Route
                             path={'anna'}
-                            element={<AuthorPage authorName="Anna" />}
+                            element={<SingleAuthorPage authorName="Anna" />}
                         />
                         <Route
                             path={'john'}
-                            element={<AuthorPage authorName="John" />}
+                            element={<SingleAuthorPage authorName="John" />}
                         />
                     </Routes>
                 </Container>
