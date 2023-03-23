@@ -57,44 +57,46 @@ const ArticlePage = ({
             />
             <div className="author-content">
                 <div className="author-share-sidebar">
-                    <AuthorListItem
-                        image={author.image}
-                        name={author.name}
-                        route={author.route}
-                        id={author.id}
-                    />
+                    <div className="sticky">
+                        <AuthorListItem
+                            image={author.image}
+                            name={author.name}
+                            route={author.route}
+                            id={author.id}
+                        />
 
-                    <div className="share_btns">
-                        Share To:
-                        <FacebookShareButton
-                            url={
-                                'https://www.makeuseof.com/add-social-share-buttons-in-react/'
-                            }
-                            quote={'Dummy text!'}
-                            hashtag="#muo"
-                        >
-                            <IconButton className="sm-icon-btn">
-                                <FacebookIcon size={22} round />
-                            </IconButton>
-                        </FacebookShareButton>
-                        <TwitterShareButton
-                            url={
-                                'https://www.makeuseof.com/add-social-share-buttons-in-react/'
-                            }
-                        >
-                            <IconButton className="sm-icon-btn">
-                                <TwitterIcon size={22} round />
-                            </IconButton>
-                        </TwitterShareButton>
-                        <EmailShareButton
-                            url={
-                                'https://www.makeuseof.com/add-social-share-buttons-in-react/'
-                            }
-                        >
-                            <IconButton className="sm-icon-btn">
-                                <EmailIcon size={22} round />
-                            </IconButton>
-                        </EmailShareButton>
+                        <div className="share_btns">
+                            Share To:
+                            <FacebookShareButton
+                                url={
+                                    'https://www.makeuseof.com/add-social-share-buttons-in-react/'
+                                }
+                                quote={'Dummy text!'}
+                                hashtag="#muo"
+                            >
+                                <IconButton className="sm-icon-btn">
+                                    <FacebookIcon size={22} round />
+                                </IconButton>
+                            </FacebookShareButton>
+                            <TwitterShareButton
+                                url={
+                                    'https://www.makeuseof.com/add-social-share-buttons-in-react/'
+                                }
+                            >
+                                <IconButton className="sm-icon-btn">
+                                    <TwitterIcon size={22} round />
+                                </IconButton>
+                            </TwitterShareButton>
+                            <EmailShareButton
+                                url={
+                                    'https://www.makeuseof.com/add-social-share-buttons-in-react/'
+                                }
+                            >
+                                <IconButton className="sm-icon-btn">
+                                    <EmailIcon size={22} round />
+                                </IconButton>
+                            </EmailShareButton>
+                        </div>
                     </div>
                 </div>
 

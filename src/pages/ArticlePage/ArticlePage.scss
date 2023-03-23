@@ -58,7 +58,6 @@
     display: flex;
     flex-flow: column nowrap;
     width: 125px;
-    position: sticky;
 }
 .sm-icon-btn {
     border: 1px solid #dcdcdc;
@@ -137,4 +136,8 @@
     .article {
         display: flex;
     }
+}
+.sticky {
+    position: sticky;
+    top: 75px;
 }
