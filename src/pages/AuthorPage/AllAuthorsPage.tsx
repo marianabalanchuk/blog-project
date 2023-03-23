@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material'
 import AuthorListItem from 'components/Author/AuthorListItem'
 import AuthorsArray from 'utils/AuthorsArray'
+import SocialMediaConstants from 'utils/SocialMediaConstants'
 
 type Props = {}
 
@@ -17,6 +18,7 @@ const AllAuthorsPage = (props: Props) => {
                             about={about}
                             route={route}
                             count={count}
+                            socialMediaPosition={SocialMediaConstants.LEFT}
                         />
                     </Grid>
                 )

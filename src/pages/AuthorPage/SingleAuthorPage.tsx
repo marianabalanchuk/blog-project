@@ -3,8 +3,8 @@ import GetCategoryHelper from 'utils/GetCategoryHelper'
 import ArticlesListItem from 'components/Articles/ArticlesListItem'
 import GetAuthorHelper from 'utils/GetAuthorHelper'
 import AuthorListItem from 'components/Author/AuthorListItem'
-import AuthorsArray from 'utils/AuthorsArray'
-import { Grid } from '@mui/material'
+import './AuthorPage.scss'
+import SocialMediaConstants from 'utils/SocialMediaConstants'
 
 type Props = {
     authorName: string
@@ -24,6 +24,7 @@ const SingleAuthorPage = (props: Props) => {
                 about={author.about}
                 route={author.route}
                 count={author.count}
+                socialMediaPosition={SocialMediaConstants.RIGHT}
             />
 
             {authorArticles.map(

@@ -1,0 +1,38 @@
+.author-pg-container {
+    .author-item {
+        flex-direction: column;
+        gap: 5px;
+        border: none;
+    }
+
+    .author-item:hover {
+        background-color: transparent;
+    }
+
+    .author-count-links {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+
+    .article {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        max-width: 850px;
+        position: static;
+        img {
+            width: 320px;
+            height: 250px;
+        }
+    }
+
+    .article-category {
+        position: static;
+        margin: 15px;
+    }
+
+    .article-summary {
+        overflow: visible;
+    }
+}
