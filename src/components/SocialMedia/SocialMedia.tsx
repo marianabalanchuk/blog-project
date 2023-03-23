@@ -1,46 +1,67 @@
 import {
     faFacebook,
+    faInstagram,
     faPinterest,
     faSpotify,
     faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import IconButton from '@mui/material/IconButton'
+import { Link } from 'react-router-dom'
+import './SocialMedia.scss'
 
-type Props = {}
+type Props = {
+    showPinterest?: boolean
+    showSpotify?: boolean
+    showInstagram?: boolean
+}
 
 const SocialMedia = (props: Props) => {
     return (
         <div className="social-media-icons">
             <IconButton>
-                <a href="https://www.facebook.com/" target={'_blank'}>
+                <Link to={'https://www.facebook.com/'} target={'_blank'}>
                     <FontAwesomeIcon icon={faFacebook} className="fb-icon" />
-                </a>
+                </Link>
             </IconButton>
+            {props.showInstagram && (
+                <IconButton>
+                    <Link to={'https://www.instagram.com/'} target={'_blank'}>
+                        <FontAwesomeIcon
+                            icon={faInstagram}
+                            className="inst-icon"
+                        />
+                    </Link>
+                </IconButton>
+            )}
+            {props.showPinterest && (
+                <IconButton>
+                    <Link to={'https://www.pinterest.com/'} target={'_blank'}>
+                        <FontAwesomeIcon
+                            icon={faPinterest}
+                            className="pinterest-icon"
+                        />
+                    </Link>
+                </IconButton>
+            )}
             <IconButton>
-                <a href="https://www.pinterest.com/" target={'_blank'}>
-                    <FontAwesomeIcon
-                        icon={faPinterest}
-                        className="pinterest-icon"
-                    />
-                </a>
-            </IconButton>
-            <IconButton>
-                <a href="https://twitter.com/" target={'_blank'}>
+                <Link to={'https://twitter.com/'} target={'_blank'}>
                     <FontAwesomeIcon
                         icon={faTwitter}
                         className="twitter-icon"
                     />
-                </a>
+                </Link>
             </IconButton>
-            <IconButton>
-                <a href="https://spotify.com/" target={'_blank'}>
-                    <FontAwesomeIcon
-                        icon={faSpotify}
-                        className="spotify-icon"
-                    />
-                </a>
-            </IconButton>
+            {props.showSpotify && (
+                <IconButton>
+                    <Link to={'https://spotify.com/'} target={'_blank'}>
+                        <FontAwesomeIcon
+                            icon={faSpotify}
+                            className="spotify-icon"
+                        />
+                    </Link>
+                </IconButton>
+            )}
         </div>
     )
 }

@@ -22,7 +22,7 @@ const Footer = (props: Props) => {
             <div>
                 © Copyright 2021 Jellywp. All rights reserved powered by Jellywp
             </div>
-            <SocialMedia />
+            <SocialMedia showPinterest={true} showSpotify={true} />
         </div>
     )
 }
