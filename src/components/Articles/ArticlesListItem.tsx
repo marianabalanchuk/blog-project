@@ -14,11 +14,11 @@ import { Author } from 'utils/AuthorsArray'
 type Props = {
     id: number
     title: string
-    category: Category
+    category?: Category
     author?: Author
-    date: Date
+    date?: Date
     image: string
-    summary: string
+    summary?: string
 }
 
 const ArticlesListItem = ({
@@ -52,6 +52,7 @@ const ArticlesListItem = ({
                 removeArticle={removeArticle}
                 setOpen={setIsOpenModal}
             />
+
             <div>
                 <img
                     src={image}
@@ -61,53 +62,56 @@ const ArticlesListItem = ({
             </div>
 
             <div className="article-data">
-                <Link to={category.route}>
-                    <div
-                        className="article-category"
-                        style={{ backgroundColor: category.color }}
-                    >
-                        {category.title}
-                    </div>
-                </Link>
-
+                {category && (
+                    <Link to={category!.route}>
+                        <div
+                            className="article-category"
+                            style={{ backgroundColor: category!.color }}
+                        >
+                            {category!.title}
+                        </div>
+                    </Link>
+                )}
                 <Link to={`/article/${id}`} className="article-title">
                     {title}
                 </Link>
 
-                <div className="article-info">
-                    <div className="article-author">
-                        <Link to={author?.route!}>{author?.name}</Link>
-                    </div>
+                {date && (
+                    <div className="article-info">
+                        <div className="article-author">
+                            <Link to={author?.route!}>{author?.name}</Link>
+                        </div>
 
-                    <div className="article-date">
-                        {moment(date).format('MMM DD, YYYY')}
-                    </div>
+                        <div className="article-date">
+                            {moment(date).format('MMM DD, YYYY')}
+                        </div>
 
-                    <IconButton
-                        aria-label="favorite"
-                        size="small"
-                        onClick={() => onLikeClick(id)}
-                    >
-                        {isLiked ? (
-                            <FavoriteIcon
-                                fontSize="inherit"
-                                className="like-btn"
-                                style={{
-                                    color: '#ff3152',
-                                }}
-                            />
-                        ) : (
-                            <FavoriteBorderIcon
-                                fontSize="inherit"
-                                className="like-btn"
-                                style={{
-                                    color: '#ff3152',
-                                }}
-                            />
-                        )}
-                    </IconButton>
-                </div>
-                <p className="article-summary">{summary}</p>
+                        <IconButton
+                            aria-label="favorite"
+                            size="small"
+                            onClick={() => onLikeClick(id)}
+                        >
+                            {isLiked ? (
+                                <FavoriteIcon
+                                    fontSize="inherit"
+                                    className="like-btn"
+                                    style={{
+                                        color: '#ff3152',
+                                    }}
+                                />
+                            ) : (
+                                <FavoriteBorderIcon
+                                    fontSize="inherit"
+                                    className="like-btn"
+                                    style={{
+                                        color: '#ff3152',
+                                    }}
+                                />
+                            )}
+                        </IconButton>
+                    </div>
+                )}
+                {summary && <p className="article-summary">{summary}</p>}
             </div>
         </div>
     )

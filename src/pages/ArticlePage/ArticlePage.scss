@@ -23,8 +23,118 @@
     .article-summary {
         font-size: 18px;
     }
+    .author-item {
+        flex-direction: column;
+        gap: 5px;
+        border: none;
+        padding: 0;
+        margin: 5px 20px;
+    }
+
+    .author-item:hover {
+        background-color: transparent;
+    }
+    .author-name {
+        font-size: 14px;
+    }
 }
 .article-content {
     font-size: 16px;
-    color: #444444;
+    color: black;
+    line-height: 1.75;
+}
+.author-content {
+    display: flex;
+}
+.share_btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    gap: 10px;
+}
+.author-share-sidebar {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 125px;
+    position: sticky;
+}
+.sm-icon-btn {
+    border: 1px solid #dcdcdc;
+    padding: 10px;
+}
+.underline {
+    text-decoration: underline;
+}
+.yellow-underline {
+    text-decoration: underline 3px #ffed6c;
+}
+.yellow-underline:hover {
+    background-color: #ffed6c;
+}
+.quote {
+    background-color: #f8f9fa;
+    padding: 30px 30px 30px 70px;
+    margin: 0 0 25px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+.quote::before {
+    content: '\275E';
+    font-size: 30px;
+}
+.quote-text {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}
+.quote-author {
+    font-size: 12px;
+}
+.has-dropcap::first-letter {
+    initial-letter: 3;
+    -webkit-initial-letter: 3;
+    margin: 0 15px;
+}
+.sub-heading {
+    font-size: 28px;
+    margin-top: 0;
+}
+.author-bottom-block {
+    .author-item {
+        flex-direction: row;
+        gap: 25px;
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 0;
+        font-size: 14px;
+    }
+    .author-item:hover {
+        background-color: #f8f9fa;
+    }
+    .author-name {
+        font-size: 18px;
+    }
+    .author-about,
+    .author-count {
+        text-align: left;
+        font-size: 14px;
+    }
+}
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    .article-image {
+        border-radius: 50%;
+        width: 85px;
+        height: 85px;
+    }
+    .article-title {
+        font-size: 15px;
+    }
+    .article {
+        display: flex;
+    }
 }

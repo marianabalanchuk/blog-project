@@ -7,11 +7,11 @@ import './AuthorListItem.scss'
 type Props = {
     id: number
     name: string
-    about: string
-    count: number
+    about?: string
+    count?: number
     image: string
     route: string
-    socialMediaPosition: string
+    socialMediaPosition?: string
 }
 
 const AuthorListItem = ({
@@ -37,21 +37,25 @@ const AuthorListItem = ({
                 </Link>
                 {socialMediaPosition == SocialMediaConstants.LEFT && (
                     <div className="author-count-links">
-                        <p>
-                            Articles:{' '}
-                            <span className="author-count">{count}</span>
-                        </p>
+                        {count && (
+                            <p>
+                                Articles:{' '}
+                                <span className="author-count">{count}</span>
+                            </p>
+                        )}
                         <SocialMedia showInstagram={true} />
                     </div>
                 )}
             </div>
-            <p className="author-about">{about}</p>
-
+            {about && <p className="author-about">{about}</p>}
             {socialMediaPosition == SocialMediaConstants.RIGHT && (
                 <div className="author-count-links">
-                    <p>
-                        Articles: <span className="author-count">{count}</span>
-                    </p>
+                    {count && (
+                        <p>
+                            Articles:
+                            <span className="author-count">{count}</span>
+                        </p>
+                    )}
                     <SocialMedia showInstagram={true} />
                 </div>
             )}
