@@ -118,19 +118,14 @@ const ArticlePage = ({
                         image={articlePrev.image}
                     />
                 </div>
-                <div className="prev-post">
-                    <p>Previous post:</p>
+                <div className="next-post">
+                    <p>Next post:</p>
                     <ArticlesListItem
                         id={articleNext.id}
                         title={articleNext.title}
                         image={articleNext.image}
                     />
                 </div>
-                {/* <div className="next-post" key={articleNext.id}>
-                    <p>Next post:</p>
-                    <h6>{articleNext.title}</h6>
-                    <img src={articleNext.image} />
-                </div> */}
             </div>
             <div className="author-bottom-block">
                 <AuthorListItem
@@ -140,7 +135,6 @@ const ArticlePage = ({
                     id={author.id}
                     about={author.about}
                     socialMediaPosition={SocialMediaConstants.LEFT}
-                    // count={author.count}
                 />
             </div>
         </div>
