@@ -10,6 +10,8 @@ import ArticlesArray from 'utils/ArticlesArray'
 import SwiperCore, { Mousewheel } from 'swiper'
 import GetCategoryHelper from 'utils/GetCategoryHelper'
 import { Link } from 'react-router-dom'
+import ArticlesListItem from 'components/Articles/ArticlesListItem'
+import GetAuthorHelper from 'utils/GetAuthorHelper'
 
 SwiperCore.use([Mousewheel])
 
@@ -52,49 +54,14 @@ function SideHomeSlider() {
                                     className="side-swiper-slide"
                                     key={id}
                                 >
-                                    <div className="article-text">
-                                        <Link
-                                            to={
-                                                GetCategoryHelper(category)
-                                                    .route
-                                            }
-                                        >
-                                            <div
-                                                className="article-category"
-                                                style={{
-                                                    backgroundColor:
-                                                        GetCategoryHelper(
-                                                            category
-                                                        ).color,
-                                                }}
-                                            >
-                                                {
-                                                    GetCategoryHelper(category)
-                                                        .title
-                                                }
-                                            </div>
-                                        </Link>
-
-                                        <div className="article-title">
-                                            {title}
-                                        </div>
-
-                                        <div className="article-info">
-                                            <div className="article-author">
-                                                <a href="#">{author}</a>
-                                            </div>
-                                            <div className="article-date">
-                                                {moment(date).format(
-                                                    'MMM DD, YYYY'
-                                                )}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <img
-                                        src={image}
-                                        alt="article image"
-                                        width={100}
-                                        height={100}
+                                    <ArticlesListItem
+                                        id={id}
+                                        title={title}
+                                        category={GetCategoryHelper(category)}
+                                        author={GetAuthorHelper(author)}
+                                        date={date}
+                                        image={image}
+                                        sideslider={sideslider}
                                     />
                                 </SwiperSlide>
                             )}

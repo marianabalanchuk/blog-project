@@ -19,6 +19,8 @@ type Props = {
     date?: Date
     image: string
     summary?: string
+    mainslider?: boolean
+    sideslider?: boolean
 }
 
 const ArticlesListItem = ({

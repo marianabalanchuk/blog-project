@@ -4,10 +4,11 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
-import moment from 'moment'
 import ArticlesArray from 'utils/ArticlesArray'
 import './MainHomeSlider.scss'
 import GetCategoryHelper from 'utils/GetCategoryHelper'
+import GetAuthorHelper from 'utils/GetAuthorHelper'
+import ArticlesListItem from 'components/Articles/ArticlesListItem'
 
 type Props = {
     id: number
@@ -44,33 +45,15 @@ function MainHomeSlider() {
                         <div key={id}>
                             {mainslider && (
                                 <SwiperSlide className="main-swiper-slider">
-                                    <img src={image} alt="article image" />
-                                    <div className="article-text">
-                                        <div
-                                            className="article-category"
-                                            style={{
-                                                backgroundColor:
-                                                    GetCategoryHelper(category)
-                                                        .color,
-                                            }}
-                                        >
-                                            {GetCategoryHelper(category).title}
-                                        </div>
-                                        <div className="article-title">
-                                            {title}
-                                        </div>
-
-                                        <div className="article-info">
-                                            <div className="article-author">
-                                                <a href="#">{author}</a>
-                                            </div>
-                                            <div className="article-date">
-                                                {moment(date).format(
-                                                    'MMM DD, YYYY'
-                                                )}
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <ArticlesListItem
+                                        id={id}
+                                        title={title}
+                                        category={GetCategoryHelper(category)}
+                                        author={GetAuthorHelper(author)}
+                                        date={date}
+                                        image={image}
+                                        mainslider={mainslider}
+                                    />
                                 </SwiperSlide>
                             )}
                         </div>

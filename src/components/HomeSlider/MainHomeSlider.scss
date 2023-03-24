@@ -1,3 +1,6 @@
+@import './variables';
+@import './mixins';
+
 .main-slider {
     width: 60%;
     --swiper-navigation-size: 40px;
@@ -6,18 +9,20 @@
 }
 .main-swiper-slider {
     img {
-        width: 100%;
-        object-fit: cover;
+        @include image-positioning;
         max-height: 550px;
-        object-position: center;
-        aspect-ratio: 1;
         position: relative;
     }
-    .article-text {
-        padding: 20px;
+
+    .article-category {
+        position: static;
+        margin: 10px;
+    }
+
+    .article-data {
         position: absolute;
         top: 50%;
-        color: white;
+        padding: 20px;
     }
 
     .article-title {
@@ -26,24 +31,11 @@
         color: white;
     }
 
-    .article-title:hover {
-        color: white;
-        cursor: pointer;
-    }
-
     .article-info {
         font-size: 14px;
         color: white;
         a {
             color: white;
         }
-    }
-    .article-category {
-        position: static;
-        margin: 10px;
-    }
-
-    .article-date::after {
-        content: '';
     }
 }

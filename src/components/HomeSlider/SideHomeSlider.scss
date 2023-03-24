@@ -1,37 +1,37 @@
+@import './variables';
+@import './mixins';
+
 .side-slider {
     max-width: 35%;
     max-height: 550px;
 }
 .side-swiper-slide {
     display: flex;
-    border-bottom: 1px solid #c1c3bf;
+    border-bottom: 1px solid $author-background;
     height: fit-content;
     padding: 5px 15px;
     align-items: center;
     width: fit-content;
-    img {
-        border-radius: 20px;
-        object-fit: cover;
-        aspect-ratio: 1;
+
+    .article {
+        display: flex;
+        gap: 10px;
+        flex-direction: row-reverse;
     }
+
     .article-category {
         position: static;
         margin: 5px;
         font-size: 12px;
     }
-    .article-text {
-        display: flex;
-        width: calc(100% - 110px);
-        flex-direction: column;
-        justify-content: center;
+    img {
+        width: 110px;
     }
     .article-title {
         font-size: 17px;
     }
+
     .article-info {
-        font-size: 12px;
-    }
-    .article-date::after {
-        content: '';
+        font-size: 13px;
     }
 }
