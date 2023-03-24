@@ -15,8 +15,9 @@ import { IconButton } from '@mui/material'
 import AuthorListItem from 'components/Author/AuthorListItem'
 import GetAuthorHelper from 'utils/GetAuthorHelper'
 import SocialMediaConstants from 'utils/SocialMediaConstants'
-import { log } from 'console'
 import RightSidebar from 'components/RightSidebar/RightSidebar'
+import AddReview from 'components/Reviews/AddReview'
+import Reviews from 'components/Reviews/Reviews'
 
 type Props = {
     articlesObject?: {
@@ -46,6 +47,7 @@ const ArticlePage = ({
         ]
 
     const author = GetAuthorHelper(article.author)
+
     return (
         <div className="article-page-container">
             <div className="main-pg-content">
@@ -140,7 +142,10 @@ const ArticlePage = ({
                         socialMediaPosition={SocialMediaConstants.LEFT}
                     />
                 </div>
+                <Reviews articleId={article.id} />
+                <AddReview articleId={article.id} />
             </div>
+
             <RightSidebar />
         </div>
     )
