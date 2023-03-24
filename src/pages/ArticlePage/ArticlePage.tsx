@@ -58,7 +58,7 @@ const ArticlePage = ({
                     summary={article.summary}
                 />
 
-                <div className="author-content">
+                <div className="author-content-div">
                     <div className="author-share-sidebar">
                         <div className="sticky">
                             <AuthorListItem

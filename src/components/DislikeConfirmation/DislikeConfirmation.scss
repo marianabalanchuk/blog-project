@@ -40,7 +40,10 @@
 .confirmation-btn {
     font-size: 25px;
     @include heading;
-    color: $accent-color;
+    color: white;
+    background-color: $accent-color;
+    border-radius: $border-radius;
+    width: 85px;
 }
 
 .confirmation-btns {
