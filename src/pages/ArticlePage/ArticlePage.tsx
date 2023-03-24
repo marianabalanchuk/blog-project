@@ -16,6 +16,7 @@ import AuthorListItem from 'components/Author/AuthorListItem'
 import GetAuthorHelper from 'utils/GetAuthorHelper'
 import SocialMediaConstants from 'utils/SocialMediaConstants'
 import { log } from 'console'
+import RightSidebar from 'components/RightSidebar/RightSidebar'
 
 type Props = {
     articlesObject?: {
@@ -47,6 +48,8 @@ const ArticlePage = ({
     const author = GetAuthorHelper(article.author)
     return (
         <div className="article-page-container">
+            <RightSidebar />
+
             <ArticlesListItem
                 id={parseInt(id!)}
                 title={article.title}

@@ -1,0 +1,13 @@
+.sidebar-categories {
+    .categories {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .category-item {
+        height: 75px;
+        img {
+            height: 75px;
+        }
+    }
+}

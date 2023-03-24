@@ -6,7 +6,7 @@ type Props = {}
 
 const CategoriesList = (props: Props) => {
     return (
-        <>
+        <div className="categories">
             {CategoriesArray.map(
                 ({ id, title, route, image, count, color }) => {
                     return (
@@ -22,7 +22,7 @@ const CategoriesList = (props: Props) => {
                     )
                 }
             )}
-        </>
+        </div>
     )
 }
 export default CategoriesList

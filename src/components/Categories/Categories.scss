@@ -2,10 +2,10 @@
     display: flex;
     justify-content: space-between;
     margin: 30px auto;
-    color: white;
 }
 .category-item {
     position: relative;
+    max-width: 240px;
     img {
         object-fit: cover;
         height: 160px;
