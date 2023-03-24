@@ -1,3 +1,5 @@
+import './PrivacyPolicyPage.scss'
+
 type Props = {}
 const PrivacyPolicyPage = (props: Props) => {
     return (

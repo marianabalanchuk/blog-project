@@ -39,7 +39,7 @@ const AuthorListItem = ({
                     <div className="author-count-links">
                         {count && (
                             <p>
-                                Articles:{' '}
+                                Articles:
                                 <span className="author-count">{count}</span>
                             </p>
                         )}

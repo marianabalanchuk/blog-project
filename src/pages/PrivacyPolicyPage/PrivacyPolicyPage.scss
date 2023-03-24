@@ -1,4 +1,9 @@
+@import './variables';
+@import './mixins';
+
 .privacy-heading {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    @include heading;
+}
+.privacy-heading:hover {
+    color: black;
 }

@@ -1,3 +1,6 @@
+@import './variables';
+@import './mixins';
+
 .inst-icon {
     background: radial-gradient(
         circle at 30% 107%,
@@ -7,44 +10,28 @@
         #d6249f 60%,
         #285aeb 90%
     );
-    padding: 10px;
-    border-radius: 50%;
-    margin: 5px;
-    color: white;
+    @include social-media-icon-big;
 }
 
 .social-media-icons {
-    font-size: 18px;
     display: flex;
     justify-content: center;
 }
 
 .fb-icon {
     background-color: #45629f;
-    padding: 10px;
-    border-radius: 50%;
-    margin: 5px;
-    color: white;
+    @include social-media-icon-big;
 }
 
 .pinterest-icon {
     background-color: #e02321;
-    padding: 10px;
-    border-radius: 50%;
-    margin: 5px;
-    color: white;
+    @include social-media-icon-big;
 }
 .twitter-icon {
     background-color: #5eb2ef;
-    padding: 10px;
-    border-radius: 50%;
-    margin: 5px;
-    color: white;
+    @include social-media-icon-big;
 }
 .spotify-icon {
     background-color: #64e391;
-    padding: 10px;
-    border-radius: 50%;
-    margin: 5px;
-    color: white;
+    @include social-media-icon-big;
 }

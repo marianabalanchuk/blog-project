@@ -1,0 +1,61 @@
+@mixin image-positioning {
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1;
+    width: 100%;
+}
+
+@mixin heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: black;
+    text-transform: capitalize;
+    &:hover {
+        color: $accent-color;
+    }
+}
+@mixin social-media-icon-big {
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 22px;
+    margin: 5px;
+}
+@mixin social-media-icon-small {
+    padding: 7px;
+    border-radius: 50%;
+    font-size: 18px;
+    margin: 0px;
+}
+@mixin count {
+    padding: 5px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    margin: auto 5px;
+}
+
+@mixin articles-list-other-pages {
+    .article {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        max-width: 850px;
+        position: static;
+        margin: 15px 0;
+        img {
+            width: 320px;
+            height: 250px;
+        }
+    }
+
+    .article-category {
+        position: static;
+        margin: 10px;
+    }
+
+    .article-summary {
+        overflow: visible;
+        -webkit-box-orient: horizontal;
+    }
+}

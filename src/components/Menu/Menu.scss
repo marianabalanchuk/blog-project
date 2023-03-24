@@ -1,15 +1,15 @@
+@import './variables';
+@import './mixins';
+
 .menu-item-active,
 .menu-item {
     font-family: 'Inter';
-    font-weight: 600;
-    color: black;
     font-size: 16px;
-    text-transform: capitalize;
-    text-decoration: none;
     display: flex;
     align-items: center;
+    @include heading;
 }
 
 .menu-item-active {
-    color: #ff3152;
+    color: $accent-color;
 }

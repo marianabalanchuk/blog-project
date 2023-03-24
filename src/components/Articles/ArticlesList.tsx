@@ -8,7 +8,7 @@ type Props = {}
 
 const ArticlesList = (props: Props) => {
     return (
-        <div>
+        <div className="articles-list">
             <Grid container spacing={4} alignItems="center">
                 {ArticlesArray.map(
                     ({ id, title, category, author, date, image, summary }) => {

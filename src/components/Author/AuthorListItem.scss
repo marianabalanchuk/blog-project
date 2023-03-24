@@ -1,3 +1,6 @@
+@import './variables';
+@import './mixins';
+
 .author-item {
     color: black;
     margin: 20px;
@@ -5,45 +8,28 @@
     align-items: center;
     gap: 25px;
     padding: 20px;
-    border-radius: 20px;
-    border: 1px solid #444444;
+    border-radius: $border-radius;
+    border: 1px solid $text-color;
     text-align: center;
+    font-size: 18px;
     p {
         margin: 8px;
     }
     .fb-icon,
     .twitter-icon,
     .inst-icon {
-        padding: 7px;
-        font-size: 18px;
-        margin: 0;
+        @include social-media-icon-small;
     }
 }
 .author-item:hover {
-    background-color: #f8f9fa;
+    background-color: $author-background;
 }
 .author-name {
+    @include heading;
     font-size: 23px;
-    font-weight: 600;
-    color: black;
-}
-.author-name:hover {
-    color: #ff3152;
-}
-
-.author-about {
-    font-size: 18px;
-}
-
-.author-count-links {
-    text-align: center;
 }
 
 .author-count {
-    font-size: 18px;
-    font-weight: 600;
-    background-color: #ff3152;
-    padding: 5px;
-    border-radius: 50%;
-    color: white;
+    background-color: $accent-color;
+    @include count;
 }

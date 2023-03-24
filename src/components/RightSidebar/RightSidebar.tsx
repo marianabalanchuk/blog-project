@@ -17,12 +17,6 @@ const RightSidebar = (props: Props) => {
     return (
         <div className="right-sidebar">
             <div className="sticky">
-                <div className="sidebar-categories">
-                    <h3>CATEGORIES</h3>
-                    <hr />
-                    <CategoriesList />
-                </div>
-
                 <div className="latest-posts">
                     <h3>LATEST POSTS</h3>
                     <hr />
@@ -38,6 +32,12 @@ const RightSidebar = (props: Props) => {
                             />
                         )
                     })}
+                </div>
+
+                <div className="sidebar-categories">
+                    <h3>CATEGORIES</h3>
+                    <hr />
+                    <CategoriesList />
                 </div>
             </div>
         </div>

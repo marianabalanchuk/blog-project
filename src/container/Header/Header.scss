@@ -1,6 +1,7 @@
+@import './variables';
+@import './mixins';
+
 .app-bar {
-    background-color: whitesmoke;
+    background-color: $author-background;
     color: black;
-    font-weight: 600;
-    font-size: 16px;
 }

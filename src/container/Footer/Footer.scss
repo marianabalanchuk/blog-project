@@ -1,3 +1,6 @@
+@import './variables';
+@import './mixins';
+
 .footer {
     background-color: black;
     text-align: center;
@@ -10,13 +13,8 @@
 }
 
 .doc-link {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
+    @include heading;
     font-size: 16px;
     margin: 0 10px;
-}
-
-.doc-link:hover {
-    color: #ff3152;
+    color: white;
 }
