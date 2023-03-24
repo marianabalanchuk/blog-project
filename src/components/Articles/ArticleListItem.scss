@@ -36,7 +36,7 @@
 .article-date::before,
 .article-date::after {
     content: '\00b7';
-    padding: 15px;
+    padding: 0 15px;
 }
 
 .article-category {

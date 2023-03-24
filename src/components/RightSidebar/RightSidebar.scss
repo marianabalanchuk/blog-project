@@ -1,3 +1,9 @@
+.right-sidebar {
+    width: 300px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
 .sidebar-categories {
     .categories {
         flex-direction: column;
@@ -8,6 +14,36 @@
         height: 75px;
         img {
             height: 75px;
+            width: 300px;
+        }
+    }
+    .category-text {
+        justify-content: space-around;
+    }
+}
+.latest-posts {
+    .article-title {
+        font-size: 14px;
+    }
+
+    .article-author a,
+    .article-date {
+        font-size: 12px;
+    }
+    .article-date::before,
+    .article-date::after {
+        content: '\00b7';
+        padding: 0 10px;
+    }
+
+    .article {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 10px;
+        img {
+            height: 85px;
+            width: 85px;
         }
     }
 }
