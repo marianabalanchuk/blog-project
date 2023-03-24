@@ -3,4 +3,5 @@
 
 .category-pg-container {
     @include articles-list-other-pages;
+    display: flex;
 }

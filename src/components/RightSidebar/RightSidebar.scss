@@ -29,23 +29,24 @@
     .article-title {
         font-size: 14px;
     }
+    .latest-posts {
+        .article-author a,
+        .article-date {
+            font-size: 12px;
+            line-height: 28px;
+        }
 
-    .article-author a,
-    .article-date {
-        font-size: 12px;
-        line-height: 28px;
-    }
-
-    .article {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        gap: 10px;
-        margin: 10px auto;
-        img {
-            height: 85px;
-            width: 85px;
+        .article {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            gap: 10px;
+            margin: 10px auto;
+            img {
+                height: 85px;
+                width: 85px;
+            }
         }
     }
 }
