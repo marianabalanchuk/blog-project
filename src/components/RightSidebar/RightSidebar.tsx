@@ -18,13 +18,13 @@ const RightSidebar = (props: Props) => {
         <div className="right-sidebar">
             <div className="sticky">
                 <div className="sidebar-categories">
-                    <h6>CATEGORIES</h6>
+                    <h3>CATEGORIES</h3>
                     <hr />
                     <CategoriesList />
                 </div>
 
                 <div className="latest-posts">
-                    <h6>LATEST POSTS</h6>
+                    <h3>LATEST POSTS</h3>
                     <hr />
 
                     {slicedArray.map(({ id, title, author, date, image }) => {
