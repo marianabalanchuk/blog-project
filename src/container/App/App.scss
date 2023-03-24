@@ -3,6 +3,15 @@
 @import './variables';
 @import './mixins';
 
+::-moz-selection {
+    background-color: $accent-color;
+    color: #fff;
+}
+::selection {
+    background-color: $accent-color;
+    color: #fff;
+}
+
 body,
 html {
     font-family: 'Inter', sans-serif;
