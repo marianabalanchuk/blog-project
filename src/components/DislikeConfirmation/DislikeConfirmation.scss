@@ -1,0 +1,57 @@
+@import './variables';
+@import './mixins';
+
+.confirmation-pop-up {
+    width: 300px;
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    border: 1px solid $accent-color;
+    box-shadow: 0px 0px 20px rgba(255, 49, 82, 0.2);
+}
+
+.modal-block {
+    max-width: 340px;
+    max-height: 290px;
+    position: fixed;
+    top: (calc(50vh - 145px));
+    left: (calc(50vw - 170px));
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.confirmation-question {
+    @include heading;
+    font-size: 20px;
+}
+.confirmation-question:hover {
+    color: black;
+}
+
+.confirmation-btn {
+    font-size: 25px;
+    @include heading;
+    color: $accent-color;
+}
+
+.confirmation-btns {
+    display: flex;
+    justify-content: space-evenly;
+}
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.close-modal:hover {
+    cursor: pointer;
+}

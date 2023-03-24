@@ -8,7 +8,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { addToFavorites, removeFromFavorites } from 'redux/likeReducer'
-import RemoveConfirmation from 'components/RemoveConfirmation/RemoveConfirmation'
+import RemoveConfirmation from 'components/DislikeConfirmation/DislikeConfirmation'
 import { Author } from 'utils/AuthorsArray'
 
 type Props = {

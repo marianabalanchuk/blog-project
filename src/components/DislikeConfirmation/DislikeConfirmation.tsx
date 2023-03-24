@@ -1,5 +1,6 @@
 import { Box, Button, Modal } from '@mui/material'
-import './RemoveConfirmation.scss'
+import './DislikeConfirmation.scss'
+import CloseIcon from '@mui/icons-material/Close'
 
 type Props = {
     open: boolean
@@ -18,14 +19,20 @@ const RemoveConfirmation = (props: Props) => {
             onClose={() => close(false)}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
+            className="modal-block"
         >
             <Box>
                 <div className="confirmation-pop-up">
+                    <CloseIcon
+                        className="close-modal"
+                        onClick={() => close(false)}
+                    />
+
                     <p className="confirmation-question">
                         Do you really want to remove this article from
                         favorites?
                     </p>
-                    <div>
+                    <div className="confirmation-btns">
                         <Button
                             className="confirmation-btn"
                             onClick={() => close(true)}
