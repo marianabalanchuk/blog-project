@@ -1,0 +1,32 @@
+@import './variables';
+@import './mixins';
+
+.about-pg-container {
+    padding: 35px;
+    .motto-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+    img {
+        width: 300px;
+        border-radius: $border-radius;
+    }
+    h2 {
+        font-size: 20px;
+        width: 300px;
+        font-style: italic;
+    }
+    h1 {
+        @include heading;
+        font-size: 40px;
+        text-align: center;
+        margin-top: 0;
+        text-decoration: underline;
+    }
+    h3 {
+        font-size: 22px;
+        font-family: 'Poppins', sans-serif;
+    }
+}
