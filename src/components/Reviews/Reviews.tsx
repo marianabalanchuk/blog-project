@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@mui/material'
 import { useAppSelector } from 'redux/hooks'
+import './AddReview.scss'
 
 type Props = {
     articleId: number
@@ -14,13 +15,12 @@ const Reviews = (props: Props) => {
 
     return (
         <div>
-            {articleReviews.map(({ id, comment, name, email }) => {
+            {articleReviews.map(({ id, comment, name }) => {
                 return (
-                    <Card variant="outlined" key={id}>
+                    <Card variant="outlined" key={id} className="review">
                         <CardContent>
-                            <div>{name}:</div>
-                            <div>{email}</div>
-                            <div>{comment}</div>
+                            <div className="review-name">{name}:</div>
+                            <div className="review-text">{comment}</div>
                         </CardContent>
                     </Card>
                 )

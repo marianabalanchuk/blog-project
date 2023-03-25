@@ -56,11 +56,7 @@ const ArticlesListItem = ({
             />
 
             <div>
-                <img
-                    src={image}
-                    alt="article image"
-                    className="article-image"
-                />
+                <img src={image} alt="article" className="article-image" />
             </div>
 
             <div className="article-data">

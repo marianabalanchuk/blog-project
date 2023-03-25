@@ -1,7 +1,12 @@
-import { Button, TextareaAutosize, TextField } from '@mui/material'
-import { useState } from 'react'
+import { Button, TextareaAutosize } from '@mui/material'
+import { useForm } from 'react-hook-form'
+import { FieldValues } from 'react-hook-form/dist/types'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { addReview, Review } from 'redux/reviewsReducer'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as Yup from 'yup'
+import './AddReview.scss'
+import { useState } from 'react'
 
 type Props = {
     articleId: number
@@ -10,6 +15,7 @@ type Props = {
 const AddReview = (props: Props) => {
     const dispatch = useAppDispatch()
     const arrReviews = useAppSelector((state) => state.reviews)
+    const [isSubmitClicked, setIsSubmitClicked] = useState(false)
 
     const ids = arrReviews.map((object) => {
         return object.id
@@ -17,84 +23,103 @@ const AddReview = (props: Props) => {
 
     const nextMaxId = Math.max(...ids) + 1
 
-    const [newReview, setNewReview] = useState<Review>({
-        id: nextMaxId,
-        articleId: props.articleId,
-        comment: '',
-        name: '',
-        email: '',
+    const validationSchema = Yup.object().shape({
+        email: Yup.string()
+            .required('Email is required')
+            .matches(
+                /^[a-z0-9](\.?[a-z0-9]){4,}@gmail\.com$/i,
+                'Email is invalid. Only gmail.com emails are accepted.'
+            ),
+
+        name: Yup.string()
+            .required('Name is required')
+            .test('len', 'Name is too short', (val) => val.length > 3),
+
+        comment: Yup.string()
+            .required('Comment is required')
+            .test('len', 'Comment is too short', (val) => val.length > 20),
     })
+    const formOptions = { resolver: yupResolver(validationSchema) }
 
-    const handleName = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setNewReview((prevState) => ({
-            ...prevState,
-            name: event.target.value,
-        }))
-    }
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm<Review>(formOptions)
 
-    const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setNewReview((prevState) => ({
-            ...prevState,
-            email: event.target.value,
-        }))
-    }
-
-    const handleText = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setNewReview((prevState) => ({
-            ...prevState,
-            comment: event.target.value,
-        }))
-    }
-
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        dispatch(addReview(newReview))
-        setNewReview({
-            id: nextMaxId,
+    const onSubmit = (values: FieldValues) => {
+        values.id = nextMaxId
+        values.articleId = props.articleId
+        dispatch(addReview(values))
+        reset({
+            id: props.articleId,
             articleId: props.articleId,
-            comment: '',
             name: '',
             email: '',
+            comment: '',
         })
+        setIsSubmitClicked(false)
+    }
+
+    const onError = (values: FieldValues) => {
+        setIsSubmitClicked(true)
     }
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <h3>Leave a Reply</h3>
+            <form
+                onSubmit={handleSubmit(onSubmit, onError)}
+                className="review-form"
+            >
+                <h3>Leave a Comment</h3>
                 <p>
                     Your Email Address Will Not Be Published. Required Fields
                     Are Marked *
                 </p>
 
-                <div>
+                <div className="textarea-error">
                     <TextareaAutosize
-                        minRows={10}
+                        className="comment-field"
+                        minRows={12}
                         placeholder="Comment*"
-                        required
-                        value={newReview.comment}
-                        onChange={handleText}
+                        {...register('comment', {
+                            required: true,
+                        })}
                     />
+                    {isSubmitClicked && (
+                        <p className="error">{errors.comment?.message}</p>
+                    )}
                 </div>
-                <div>
-                    <TextField
-                        placeholder="Full Name*"
-                        required
-                        value={newReview.name}
-                        onChange={handleName}
-                    />
+                <div className="name-email-block">
+                    <div className="name-error">
+                        <input
+                            className="name-field"
+                            placeholder="Name*"
+                            {...register('name', {
+                                required: true,
+                            })}
+                        />
+                        {isSubmitClicked && (
+                            <p className="error">{errors.name?.message}</p>
+                        )}
+                    </div>
+                    <div className="email-error">
+                        <input
+                            className={`email-field ${
+                                errors.email ? 'is-invalid' : ''
+                            }`}
+                            placeholder="Email Address*"
+                            {...register('email', {
+                                required: true,
+                            })}
+                        />
+                        {isSubmitClicked && (
+                            <p className="error">{errors.email?.message}</p>
+                        )}
+                    </div>
                 </div>
-                <div>
-                    <TextField
-                        type="email"
-                        placeholder="Email Address*"
-                        required
-                        value={newReview.email}
-                        onChange={handleEmail}
-                    />
-                </div>
-
-                <Button variant="outlined" type="submit">
+                <Button type="submit" className="post-btn">
                     Post Comment
                 </Button>
             </form>

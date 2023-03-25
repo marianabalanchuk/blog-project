@@ -1,0 +1,85 @@
+@import './variables';
+@import './mixins';
+
+.review-form {
+    font-size: 14px;
+    color: $text-color;
+    font-family: 'Inter', sans-serif;
+    h3 {
+        @include heading;
+        font-size: 24px;
+        margin: 15px 0;
+    }
+    h3:hover {
+        color: black;
+    }
+}
+
+.comment-field,
+.comment-field:focus,
+.name-field:focus,
+.email-field:focus,
+.name-field,
+.email-field {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 0;
+    outline: none;
+}
+
+.comment-field {
+    width: 96%;
+    padding: 15px;
+}
+
+.name-email-block {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+.name-field,
+.email-field {
+    padding: 13px;
+}
+
+.post-btn {
+    background-color: black;
+    color: white;
+    border-radius: 0;
+    margin: 15px 0;
+    padding: 0 30px;
+    font-weight: 600;
+    line-height: 40px;
+    text-transform: capitalize;
+}
+.post-btn:hover {
+    background-color: $accent-color;
+}
+
+.email-error,
+.name-error,
+.textarea-error {
+    display: flex;
+    flex-direction: column;
+}
+.email-error,
+.name-error {
+    width: calc(50% - 25px);
+    margin-top: 20px;
+}
+.error {
+    color: red;
+}
+.review-name {
+    font-weight: 600;
+    margin: 5px;
+    font-size: 16px;
+}
+.review-text {
+    font-style: italic;
+}
+.review {
+    border-radius: $border-radius;
+    margin: 15px;
+    border-color: orangered;
+}

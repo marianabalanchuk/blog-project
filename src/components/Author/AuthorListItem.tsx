@@ -35,7 +35,7 @@ const AuthorListItem = ({
                 <Link to={route}>
                     <p className="author-name">{name}</p>
                 </Link>
-                {socialMediaPosition == SocialMediaConstants.LEFT && (
+                {socialMediaPosition === SocialMediaConstants.LEFT && (
                     <div className="author-count-links">
                         {count && (
                             <p>
@@ -48,7 +48,7 @@ const AuthorListItem = ({
                 )}
             </div>
             {about && <p className="author-about">{about}</p>}
-            {socialMediaPosition == SocialMediaConstants.RIGHT && (
+            {socialMediaPosition === SocialMediaConstants.RIGHT && (
                 <div className="author-count-links">
                     {count && (
                         <p>

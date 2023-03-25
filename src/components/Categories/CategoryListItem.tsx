@@ -1,4 +1,4 @@
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 type Props = {
     title: string
@@ -12,7 +12,7 @@ const CategoryListItem = ({ title, count, route, image, color }: Props) => {
     return (
         <div className="category-item">
             <Link to={route}>
-                <img src={image} alt="category image" />
+                <img src={image} alt="category" />
                 <div className="category-text">
                     <p className="category-title">{title}</p>
                     <p
