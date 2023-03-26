@@ -1,0 +1,28 @@
+@import './variables';
+@import './mixins';
+
+.subscribe-form {
+    background-color: #eceae2;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 50px;
+    .name-email-block {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: flex-start;
+    }
+
+    .email-error,
+    .name-error {
+        width: 400px;
+        margin-top: 5px;
+    }
+    .checkbox {
+        color: $accent-color;
+    }
+}

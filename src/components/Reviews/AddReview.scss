@@ -65,10 +65,13 @@
 .email-error,
 .name-error {
     width: calc(50% - 25px);
-    margin-top: 20px;
+    margin-top: 15px;
 }
 .error {
     color: red;
+    margin: 3px;
+    font-size: 12px;
+    height: 16px;
 }
 .review-name {
     font-weight: 600;

@@ -87,9 +87,11 @@ const AddReview = (props: Props) => {
                             required: true,
                         })}
                     />
-                    {isSubmitClicked && (
-                        <p className="error">{errors.comment?.message}</p>
-                    )}
+                    <p className="error">
+                        {isSubmitClicked && (
+                            <span>{errors.comment?.message}</span>
+                        )}
+                    </p>
                 </div>
                 <div className="name-email-block">
                     <div className="name-error">
@@ -100,9 +102,11 @@ const AddReview = (props: Props) => {
                                 required: true,
                             })}
                         />
-                        {isSubmitClicked && (
-                            <p className="error">{errors.name?.message}</p>
-                        )}
+                        <p className="error">
+                            {isSubmitClicked && (
+                                <span>{errors.name?.message}</span>
+                            )}
+                        </p>
                     </div>
                     <div className="email-error">
                         <input
@@ -114,9 +118,11 @@ const AddReview = (props: Props) => {
                                 required: true,
                             })}
                         />
-                        {isSubmitClicked && (
-                            <p className="error">{errors.email?.message}</p>
-                        )}
+                        <p className="error">
+                            {isSubmitClicked && (
+                                <span>{errors.email?.message}</span>
+                            )}
+                        </p>
                     </div>
                 </div>
                 <Button type="submit" className="post-btn">
