@@ -2,6 +2,7 @@
 @import './mixins';
 
 .subscribe-form {
+    width: 50%;
     background-color: #eceae2;
     padding: 30px;
     text-align: center;
@@ -9,11 +10,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 30px 50px;
+    margin: 30px auto;
     .name-email-block {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 0;
         justify-content: flex-start;
     }
 
@@ -22,7 +23,15 @@
         width: 400px;
         margin-top: 5px;
     }
-    .checkbox {
-        color: $accent-color;
-    }
+}
+.subscribed-modal {
+    max-width: 340px;
+    max-height: 290px;
+    position: fixed;
+    top: (calc(50vh - 145px));
+    left: (calc(50vw - 170px));
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: aqua;
 }

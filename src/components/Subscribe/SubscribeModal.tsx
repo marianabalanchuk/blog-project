@@ -1,6 +1,6 @@
 import { Box, Modal } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import './SubscribeModal.scss'
+import './Subscribe.scss'
 
 type Props = {
     open: boolean
