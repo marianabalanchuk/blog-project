@@ -10,7 +10,7 @@
 }
 .no-favorites {
     @include heading;
-    font-size: 45px;
+    font-size: 30px;
     text-align: center;
 }
 .no-favorites:hover {
@@ -18,12 +18,12 @@
 }
 .explore-btn {
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 600;
     background-color: $accent-color;
     color: white;
     border-radius: $border-radius;
-    padding: 15px;
+    padding: 10px;
 }
 .explore-btn:hover {
     color: $accent-color;

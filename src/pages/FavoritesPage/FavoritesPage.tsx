@@ -22,7 +22,7 @@ const FavouritesPage = ({
             <div className="favorites-pg-content">
                 {Object.keys(favoriteArticles).length === 0 ? (
                     <div className="no-favorites">
-                        <p> No articles have been added Favorites yet.</p>
+                        <p> No articles have been added Favorites yet 😿</p>
                         <Link to={'/'}>
                             <Button className="explore-btn">Explore</Button>
                         </Link>

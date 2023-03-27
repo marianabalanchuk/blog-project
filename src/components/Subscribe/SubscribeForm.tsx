@@ -104,17 +104,11 @@ const SubscribeForm = (props: Props) => {
                 <div>
                     <FormControlLabel
                         control={
-                            <>
-                                <input
-                                    type="checkbox"
-                                    className="checkbox"
-                                    {...register('checkbox')}
-                                />
-                                <span
-                                    className="checkbox-custom"
-                                    {...register('checkbox')}
-                                ></span>
-                            </>
+                            <input
+                                type="checkbox"
+                                className="checkbox"
+                                {...register('checkbox')}
+                            />
                         }
                         label="I consent to the terms and conditions"
                     />

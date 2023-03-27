@@ -3,6 +3,10 @@
 @import './variables';
 @import './mixins';
 
+* {
+    box-sizing: border-box;
+}
+
 ::-moz-selection {
     background-color: $accent-color;
     color: #fff;

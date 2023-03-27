@@ -18,7 +18,7 @@ const SubscribeModal = (props: Props) => {
                 onClose={() => close(true)}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
-                className="subscribed-modal"
+                className="subscribed-modal-block"
             >
                 <Box>
                     <div className="subscribed-pop-up">
@@ -28,7 +28,7 @@ const SubscribeModal = (props: Props) => {
                         />
 
                         <div>
-                            <h3>Thank you!</h3>
+                            <h3 className="confirmation-heading">Thank you!</h3>
                             <p>
                                 Thank you for signing up to receive the
                                 Newsletters. Please check your inbox to confirm

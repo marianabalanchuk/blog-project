@@ -1,6 +1,5 @@
 import Button from '@mui/material/Button'
 import { NavLink } from 'react-router-dom'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
 type Props = {
     to: string
@@ -17,7 +16,6 @@ const MenuItem = ({ to, children }: Props) => {
                     }
                 >
                     {children}
-                    <ExpandMoreIcon />
                 </NavLink>
             </Button>
         </>

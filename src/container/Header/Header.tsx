@@ -7,9 +7,14 @@ import { Container } from '@mui/material'
 import './Header.scss'
 import Logo from 'components/Logo/Logo'
 import Menu from 'components/Menu/Menu'
+import { useState } from 'react'
+import { useAppDispatch } from 'redux/hooks'
+import { toggleSidebar } from 'redux/sidebarReducer'
 
 type Props = {}
 const Header = (props: Props) => {
+    const dispatch = useAppDispatch()
+
     return (
         <AppBar position="fixed" className="app-bar">
             <Container>
@@ -22,6 +27,7 @@ const Header = (props: Props) => {
                         edge="start"
                         aria-label="menu"
                         sx={{ mr: 2 }}
+                        onClick={() => dispatch(toggleSidebar('right'))}
                     >
                         <MenuIcon />
                     </IconButton>
