@@ -23,8 +23,8 @@ const SubscribeForm = (props: Props) => {
         email: Yup.string()
             .required('Email is required')
             .matches(
-                /^[a-z0-9](\.?[a-z0-9]){4,}@gmail\.com$/i,
-                'Email is invalid. Only gmail.com emails are accepted.'
+                /^[a-z0-9](\.?[a-z0-9]){1,}@gmail\.com$/i,
+                'Only valid gmail.com emails are accepted.'
             ),
 
         name: Yup.string()
@@ -111,6 +111,7 @@ const SubscribeForm = (props: Props) => {
                             />
                         }
                         label="I consent to the terms and conditions"
+                        className="agree-block"
                     />
                     <p className="error">
                         {isSubmitClicked && (

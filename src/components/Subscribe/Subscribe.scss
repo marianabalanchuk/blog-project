@@ -32,7 +32,7 @@
     left: (calc(50vw - 170px));
     right: 0;
     bottom: 0;
-    z-index: 100;
+    z-index: 10000;
 }
 .subscribed-pop-up {
     width: 340px;
@@ -53,4 +53,19 @@
 .confirmation-heading {
     @include heading;
     font-size: 20px;
+}
+
+.subscribe-sidebar {
+    .subscribe-form {
+        width: 85%;
+        padding: 20px;
+
+        .agree-block {
+            margin: 0;
+        }
+        .email-error,
+        .name-error {
+            width: 250px;
+        }
+    }
 }

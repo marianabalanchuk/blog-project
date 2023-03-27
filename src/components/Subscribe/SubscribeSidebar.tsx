@@ -23,12 +23,15 @@ export default function SubscribeSidebar() {
         }
 
     return (
-        <div>
-            <React.Fragment key={right}>
-                <Drawer anchor={right} open={isOpen} onClose={toggleDrawer()}>
-                    <SubscribeForm />
-                </Drawer>
-            </React.Fragment>
-        </div>
+        <React.Fragment key={right}>
+            <Drawer
+                anchor={right}
+                open={isOpen}
+                onClose={toggleDrawer()}
+                className="subscribe-sidebar"
+            >
+                <SubscribeForm />
+            </Drawer>
+        </React.Fragment>
     )
 }

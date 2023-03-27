@@ -26,9 +26,10 @@ const AddReview = (props: Props) => {
     const validationSchema = Yup.object().shape({
         email: Yup.string()
             .required('Email is required')
+
             .matches(
-                /^[a-z0-9](\.?[a-z0-9]){4,}@gmail\.com$/i,
-                'Email is invalid. Only gmail.com emails are accepted.'
+                /^[a-z0-9](\.?[a-z0-9]){1,}@gmail\.com$/i,
+                'Only valid gmail.com emails are accepted.'
             ),
 
         name: Yup.string()
